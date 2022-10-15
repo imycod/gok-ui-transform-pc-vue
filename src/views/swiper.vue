@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import swiper1 from '@/components/swiper/swiper1';
+import swiper1 from '@/components/swiper/swiper-v5';
+
 export default {
   name: 'swiper',
   components: {

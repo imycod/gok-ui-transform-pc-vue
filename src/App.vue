@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-<!--    <mock></mock>-->
+    <!--    <mock></mock>-->
     <swiper></swiper>
   </div>
 </template>
@@ -18,8 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus">
 #app {
-
 }
 </style>
