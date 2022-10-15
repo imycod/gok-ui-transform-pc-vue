@@ -1,26 +1,25 @@
 <template>
   <div id="app">
-   <demo1></demo1>  
+<!--    <mock></mock>-->
+    <swiper></swiper>
   </div>
 </template>
 
 <script>
-import demo1 from "./views/demo1.vue"
+import mock from '@/views/mock.vue'
+import swiper from '@/views/swiper.vue'
+
 export default {
   name: 'App',
   components: {
-     demo1,
+    mock,
+    swiper,
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>

@@ -10,8 +10,8 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
   devServer: {
-    port: 8080,
-    open: true,
+    // port: 8080,
+    // open: false,
     static: {
       directory: path.join(__dirname, 'public'),
     },

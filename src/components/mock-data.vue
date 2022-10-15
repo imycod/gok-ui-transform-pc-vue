@@ -1,21 +1,28 @@
 <template>
-  <div class="demo1">demo1</div>
+  <div class="mock-data">
+    {{mockList}}
+  </div>
 </template>
 
 <script>
 import request from "@/utils/request.js";
 
 export default {
-  name: "demo1",
+  name: "mock-data",
   components: {},
+  data () {
+    return {
+      mockList: []
+    }
+  },
   created() {
     this.init();
   },
   mounted() {},
   methods: {
     async init() {
-      const res = await request("/vue-element-admin/article/list");
-      console.log(res);
+      const { data } = await request("/vue-element-admin/article/list");
+      this.mockList=data
     },
   },
 };
