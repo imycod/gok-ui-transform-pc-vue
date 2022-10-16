@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import "normalize.css"
 import "swiper/css/swiper.min.css"
+import '@/assets/css/index.styl'
+
 
 Vue.config.productionTip = false
 

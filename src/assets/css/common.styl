@@ -1,0 +1,151 @@
+/* 单行省略 */
+.to {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  // webkit-box-orient: vertical; //垂直
+  // -webkit-line-clamp: 1;  //显示一行
+  // white-space:pre-line;   //合并空白符序列，但是保留换行符。(如果要使用这个垂直和显示几行的代码也要写)
+  word-break: break-all; // 纯英文、数字、中文
+}
+
+.btn-disabled {
+  background: $disabled !important;
+  border-color: #fff !important;
+  cursor: not-allowed !important;
+}
+
+.ml40 {
+  margin-left: 40px;
+}
+
+.mt35 {
+  margin-top: 35px;
+}
+// 可点击
+.cp {
+  cursor: pointer;
+}
+.cn {
+  cursor: not-allowed;    // 不可点击
+}
+ .cw {
+  cursor: wait;    // loading
+}
+.br4 {
+  border-radius: 4px;
+}
+// 按钮不可选中文字
+.btn-no-current {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+/**
+ * 遮罩
+ */
+.g-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex { // 让所有元素 横向排布
+  display: flex;
+}
+
+.column { // 让元素纵向排列 结合flex使用
+  flex-direction: column;
+}
+
+.inline { // 转换元素未行内并宽度继承父级
+  display: inline;
+  width: 100%;
+}
+
+.center { // 元素居中 横轴纵轴居中
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.text-center { // 文本居中
+  text-align: center;
+}
+
+.between { // 让元素按横轴分开排布
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: right;
+}
+
+.h-full { // 高度100% 继承父级
+  height: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.w-full { // 宽度100% 继承父级
+  width: 100%;
+}
+
+.t-0 { // 距离top上边 搭配 relative absolute 使用 或独自
+  top: 0;
+}
+
+.r-0 { // 距离right右边 搭配 relative absolute 使用 或独自
+  right: 0;
+}
+
+.l-0{
+  left:0px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky; /* 兼容 */
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.g-disabled { // 禁用样式
+  pointer-events: none;
+  cursor: default;
+}
+
+.g-disabled-color { // 禁用文字颜色
+  color: #ccc !important;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.pointer {
+  cursor pointer
+}
+

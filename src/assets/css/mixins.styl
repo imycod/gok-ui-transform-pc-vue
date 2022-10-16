@@ -1,0 +1,14 @@
+// 盒子文本高度不需要设置,默认单行,可以传参数设置多行
+g-text-overflow(line = 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  /*用来限制在一个块元素中显示的文本的行数*/
+  -webkit-line-clamp: line;
+  /*设置伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+  word-break: break-all; //纯英文、数字、中文
+  white-space:pre-line;
+  -webkit-box-orient: vertical; //垂直
+}

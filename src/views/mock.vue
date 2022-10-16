@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MockData from '@/components/mock-data';
+import MockData from '@/components/mock/mock-data';
 
 export default {
   name: 'mock',

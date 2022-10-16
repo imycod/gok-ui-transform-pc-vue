@@ -27,12 +27,43 @@ for (let i = 0; i < count; i++) {
   }))
 }
 
+const swiper2 = Mock.mock({
+  'name': '@cname',
+  'units': '福建国科信息科技有限公司',
+  'position': '人才运营总监',
+  'imgUrl': '@image(80)',
+  'brief': '@cparagraph'
+})
+
 module.exports = [
+  {
+    url: '/gok-ui/swiper2',
+    type: 'get',
+    response: _ => {
+      return {
+        code: 20000,
+        data: () => {
+          const list = []
+          for (let i = 0; i < 5; i++) {
+            list.push(swiper2)
+          }
+          return list
+        },
+      }
+    },
+  },
   {
     url: '/vue-element-admin/article/list',
     type: 'get',
     response: config => {
-      const { importance, type, title, page = 1, limit = 20, sort } = config.query
+      const {
+        importance,
+        type,
+        title,
+        page = 1,
+        limit = 20,
+        sort
+      } = config.query
 
       let mockList = List.filter(item => {
         if (importance && item.importance !== +importance) return false
@@ -81,10 +112,22 @@ module.exports = [
         code: 20000,
         data: {
           pvData: [
-            { key: 'PC', pv: 1024 },
-            { key: 'mobile', pv: 1024 },
-            { key: 'ios', pv: 1024 },
-            { key: 'android', pv: 1024 }
+            {
+              key: 'PC',
+              pv: 1024
+            },
+            {
+              key: 'mobile',
+              pv: 1024
+            },
+            {
+              key: 'ios',
+              pv: 1024
+            },
+            {
+              key: 'android',
+              pv: 1024
+            }
           ]
         }
       }

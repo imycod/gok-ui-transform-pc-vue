@@ -1,0 +1,65 @@
+// p-l-2/4/6/8/10 .... 50 | p-b-
+padding-class(selector, len) {
+  for u in 1 .. len {
+    num = u * 2;
+    if (selector == 'l') {
+      .p-l-{num} {
+        padding-left: num * 1px;
+      }
+    } else if (selector == 'r') {
+      .p-r-{num} {
+        padding-right: num * 1px;
+      }
+    } else if (selector == 't') {
+      .p-t-{num} {
+        padding-top: num * 1px;
+      }
+    } else if ( selector == 'b') {
+      .p-b-{num} {
+        padding-bottom: num * 1px;
+      }
+    } else {
+      .p-{num}{
+        padding-left: num * 1px;
+        padding-right: num * 1px;
+        padding-top: num * 1px;
+        padding-bottom: num * 1px;
+      }
+    }
+  }
+}
+
+padding-class('l', 50);
+padding-class('r', 50);
+padding-class('t', 50);
+padding-class('b', 50);
+padding-class('', 50);
+
+// m-l-2/4/6/8/10 .... 20 | m-b-
+margin-class(selector, len) {
+  for u in 1 .. len {
+    num = u * 2;
+    if (selector == 'l') {
+      .m-l-{num} {
+        margin-left: num * 1px;
+      }
+    } else if (selector == 'r') {
+      .m-r-{num} {
+        margin-right: num * 1px;
+      }
+    } else if (selector == 't') {
+      .m-t-{num} {
+        margin-top: num * 1px;
+      }
+    } else {
+      .m-b-{num} {
+        margin-bottom: num * 1px;
+      }
+    }
+  }
+}
+
+margin-class('l', 50);
+margin-class('r', 50);
+margin-class('t', 50);
+margin-class('b', 50);
