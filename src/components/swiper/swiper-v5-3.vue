@@ -6,16 +6,16 @@
       <div class="sub-title">introduction of the project team</div>
     </div>
     <div class="swiper-container absolute" ref="container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(item,index) in list" :key="index">
-          <div class="swiper-slide__hover w-full h-full">
-            <img class="image m-t-24" :src="item.imgUrl" alt="">
-            <div class="name m-t-14">{{ item.name }}</div>
-            <p class="units">{{ item.units }}</p>
-            <div class="position m-t-8">{{ item.position }}</div>
-            <div class="brief m-t-16">{{ item.brief }}</div>
-          </div>
+      <div class="swiper-wrapper" data-current="0">
+        <div class="swiper-slide" v-for="(item,index) in list" :key="index"
+             @mouseenter="(e)=>setCurrentItem(e,index,'enter')">
+          <img class="image m-t-24" :src="item.imgUrl" alt="">
+          <div class="name m-t-14">{{ item.name }}</div>
+          <p class="units">{{ item.units }}</p>
+          <div class="position m-t-8">{{ item.position }}</div>
+          <div class="brief m-t-16">{{ item.brief }}</div>
         </div>
+        <div class="line line__first" :style="lineStyle"></div>
       </div>
       <!-- Add Arrows -->
       <div class="swiper-button-next rot">
@@ -44,6 +44,8 @@ export default {
     return {
       swiper: null,
       acNum: 0,
+      lineStyle: {},
+      isFirst: true,
     }
   },
   mounted () {
@@ -78,15 +80,52 @@ export default {
         },
       })
     },
+    setCurrentItem (event, num, type) {
+      const {
+        offsetParent,
+        offsetLeft,
+        clientWidth
+      } = event.target
+      console.log(event.target)
+
+      if (this.isFirst && type == 'enter') {
+        this.lineStyle = {
+          width: '250px',
+          left: offsetLeft + 'px',
+        }
+        this.isFirst = false
+        return
+      }
+      // 父级宽度
+      const parentWidth = offsetParent.clientWidth
+      const offsetRight = parentWidth - offsetLeft - clientWidth
+      this.lineStyle = {
+        left: offsetLeft + 'px',
+        right: offsetRight + 'px',
+      }
+      console.log(this.lineStyle)
+
+      var currentElement = document.getElementsByClassName('swiper-wrapper')[0];
+      var oldNum = parseInt(currentElement.getAttribute('data-current'));
+      currentElement.setAttribute('data-current', num);
+
+      if (oldNum > num) {
+        document.getElementsByClassName('line')[0].className = 'line animation';
+      } else {
+        document.getElementsByClassName('line')[0].className = 'line reverseAnimation';
+      }
+
+    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 .project-teams-intro {
+
+
   background: #FFFFFF;
   height: 554px;
-
 
   .absolute__badge {
     background: linear-gradient(134deg, #ff7d33 0%, rgba(255, 125, 51, 0) 100%);
@@ -113,6 +152,7 @@ export default {
       color: #FE8836;
     }
   }
+
 
   .swiper-container {
     --swiper-navigation-size: 0;
@@ -145,16 +185,32 @@ export default {
       pointer-events: auto;
     }
 
-    .swiper-slide {
-      position: relative;
-      width: 250px;
-      height: 100%;
+    .swiper-wrapper {
 
-      common-line-style(){
-
+      .animation {
+        transition: left 200ms cubic-bezier(0.4, 0.0, 0.2, 1), right 200ms cubic-bezier(0.4, 0.0, 0.2, 1) 70ms;
       }
 
-      .swiper-slide__hover {
+      .reverseAnimation {
+        transition: right 200ms cubic-bezier(0.4, 0.0, 0.2, 1), left 200ms cubic-bezier(0.4, 0.0, 0.2, 1) 70ms;
+      }
+
+      .line {
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        background: #ff0072;
+      }
+
+      .line__first {
+        width: 0px;
+        transition: all 0.3s;
+      }
+
+      .swiper-slide {
+        position: relative;
+        width: 250px;
+        height: 100%;
         background: #F7F9FC;
         border: 1px solid #F0F2F7;
         display: flex;
@@ -163,31 +219,7 @@ export default {
 
         padding: 0px 16px;
         padding-bottom: 21px;
-        box-sizing:border-box;
-
-        &:hover {
-          cursor: pointer;
-          box-shadow: 2em 2em 3em -2em rgba(0, 0, 0, .2);
-          transition-duration: 0.3s;
-          transform: scale(1);
-
-          &:after {
-            content:'';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background-color: red;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s;
-          }
-          &:after {
-            transform-origin: bottom left;
-            transform: scaleX(1);
-          }
-        }
+        box-sizing: border-box;
 
         .name {
           font-size: 22px;
@@ -222,19 +254,8 @@ export default {
           border-radius: 50%;
         }
 
-        &:after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 3px;
-          bottom: 0;
-          left: 0;
-          background-color: @red;
-          transform: scaleX(0);
-          transform-origin: bottom right;
-          transition: transform 0.3s;
-        }
       }
+
     }
 
   }

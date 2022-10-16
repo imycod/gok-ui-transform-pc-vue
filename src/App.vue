@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!--    <mock></mock>-->
+    <mock v-if="false"></mock>
     <swiper></swiper>
   </div>
 </template>
