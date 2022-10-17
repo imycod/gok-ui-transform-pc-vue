@@ -198,8 +198,8 @@ export default {
       .line {
         position: absolute;
         bottom: 0;
-        height: 3px;
-        background: #ff0072;
+        height: 4px;
+        background: #FE8836;
       }
 
       .line__first {

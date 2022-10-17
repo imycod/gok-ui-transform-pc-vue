@@ -1,7 +1,7 @@
 <template>
   <div class="swiper">
     <swiper1 v-if="false"></swiper1>
-    <swiper2 v-if="false && swiper2List"  :list="swiper2List"></swiper2>
+    <swiper2 v-if="swiper2List"  :list="swiper2List"></swiper2>
     <swiper3 v-if="swiper2List"  :list="swiper2List"></swiper3>
   </div>
 </template>

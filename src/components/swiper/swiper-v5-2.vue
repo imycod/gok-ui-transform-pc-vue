@@ -175,10 +175,10 @@ export default {
             content:'';
             position: absolute;
             width: 100%;
-            height: 3px;
             bottom: 0;
             left: 0;
-            background-color: red;
+            height: 4px;
+            background: #FE8836;
             transform: scaleX(0);
             transform-origin: bottom right;
             transition: transform 0.3s;
