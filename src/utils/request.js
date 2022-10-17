@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-console.log(process.env);
+import TARINING_API from './api/training-project.js';
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
-  timeout: 5000 
+  timeout: 5000
 })
 
 service.interceptors.request.use(
@@ -12,7 +12,7 @@ service.interceptors.request.use(
     return config
   },
   error => {
-    console.log(error) 
+    console.log(error)
     return Promise.reject(error)
   }
 )
@@ -22,10 +22,9 @@ service.interceptors.response.use(
     const res = response.data
 
     if (res.code !== 20000) {
-  
 
       if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
-      
+
       }
       return Promise.reject(new Error(res.message || 'Error'))
     } else {
@@ -33,10 +32,14 @@ service.interceptors.response.use(
     }
   },
   error => {
-    console.log('err' + error) 
+    console.log('err' + error)
 
     return Promise.reject(error)
   }
 )
 
+export { TARINING_API }
+
 export default service
+
+

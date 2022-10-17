@@ -1,7 +1,7 @@
 const Mock = require('mockjs')
 const { param2Obj } = require('./utils')
 
-const article = require('./article')
+const article = require('./api/training-project.js')
 const mocks = [
   ...article,
 ]

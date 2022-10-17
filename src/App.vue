@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import mock from '@/views/mock.vue'
-import swiper from '@/views/swiper.vue'
+import mock from '@/view/mock.vue'
+import swiper from '@/view/swiper.vue'
 
 export default {
   name: 'App',
