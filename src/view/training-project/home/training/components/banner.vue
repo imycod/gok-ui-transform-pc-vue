@@ -42,7 +42,7 @@ export default {
   methods: {
     async getBannerList () {
       // todo 把 params和data删掉
-      const { data } = await request(TACAPI.getProjectBanner, { params:{count:3} })
+      const { data } = await request(TARINING_API.getProjectBanner, { params:{count:3} })
       this.carouselList = [].concat(data.data)
     },
     /**

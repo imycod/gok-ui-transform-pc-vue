@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img src="~@img/job/hello.png" alt="">
+    <img src="@/assets/images/hello.png" alt="">
     <div class="title">Hi，你好</div>
     <div class="tip">登录后，我们将为推荐合适的职位</div>
     <div class="btn cp" @click="login">立即登录</div>

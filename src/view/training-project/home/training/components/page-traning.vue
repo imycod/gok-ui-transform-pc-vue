@@ -8,7 +8,7 @@
           </div>
           <div class="more cp" @click="toMore(component.morePath)">
             <span>更多</span>
-            <img src="~@img/job/right.png" alt="" />
+            <img src="@/assets/images/right.png" alt="" />
           </div>
         </div>
         <div class="recruitment-container m-t-24">
@@ -22,8 +22,8 @@
 import components from "./page/loaderComponent.js"
 
 // 图片引入
-import optImg from '@/assets/images/icon/opt.png';
-import caseImg from '@/assets/images/icon/case.png';
+import optImg from '@/assets/images/opt.png';
+import caseImg from '@/assets/images/case.png';
 export default {
   name:'page-training',
   data () {

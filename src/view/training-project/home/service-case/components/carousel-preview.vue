@@ -7,7 +7,7 @@
             <div class="demo-carousel">
                  <img :src="item.mediaType == 'VIDEO' ? item.coverUrl : item.bannerUrl" alt="" class="carousel-img">
                   <div class="player-mask-c" v-if="item.mediaType == 'VIDEO'">
-                      <img src="~@img/job/player-icon.png" alt="" class="player-icon" @click="toPlayer(item,index)">
+                      <img src="@/assets/images/player-icon.png" alt="" class="player-icon" @click="toPlayer(item,index)">
                   </div>
             </div>
         </CarouselItem>

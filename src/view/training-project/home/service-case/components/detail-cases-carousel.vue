@@ -8,10 +8,10 @@
       </div>
       <!-- Add Arrows -->
       <div class="swiper-button-next rot" v-if="list.length>=4">
-        <img class="btn" src="@/assets/images/training/icon/carousel-right.png" alt="">
+        <img class="btn" src="@/assets/images/carousel-right.png" alt="">
       </div>
       <div class="swiper-button-prev rat" v-if="list.length>=4">
-        <img class="btn" src="@/assets/images/training/icon/carousel-left.png" alt="">
+        <img class="btn" src="@/assets/images/carousel-left.png" alt="">
       </div>
     </div>
   </div>

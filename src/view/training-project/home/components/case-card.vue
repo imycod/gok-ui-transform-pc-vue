@@ -8,7 +8,7 @@
     <h3 class="title">{{ item.name }}</h3>
     <div class="loc-duration m-t-16 flex flex-start">
       <div class="left center">
-        <img class="icon m-r-4" src="@img/training/icon/adress.png" alt="">
+        <img class="icon m-r-4" src="@/assets/images/adress.png" alt="">
         <div class="areas to">
           <span class="txt" v-for="(address,index) in item.areas">
             {{address.county}} {{address.province}} {{address.city}}
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="right center">
-        <img class="icon m-r-4" src="@img/training/icon/clock.png" alt="">
+        <img class="icon m-r-4" src="@/assets/images/clock.png" alt="">
         <span class="txt">
           <span>项目周期：</span>
           <span>{{item.beginTime | dateFormat}}</span>
@@ -62,7 +62,7 @@ common-text-style(){
 .case-card {
   width: 1064px;
   height: 200px;
-  background:url("~@/assets/images/training/project/bg1.png") no-repeat center;
+  background:url("~@/assets/images/bg1.png") no-repeat center;
   opacity: 1;
   border: 1px solid #F0F2F7;
 

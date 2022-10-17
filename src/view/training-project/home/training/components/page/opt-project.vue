@@ -1,7 +1,7 @@
 <template>
   <div class="opt-project">
     <div class="section-1">
-      <opt-card v-for="_ in 3"></opt-card>
+      <opt-card v-for="(_,index) in 3" :key="index"></opt-card>
     </div>
     <div class="image__placeholder m-t-20 bd"></div>
   </div>

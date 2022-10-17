@@ -32,7 +32,7 @@
   </div>
 </template>
 <script>
-import { TraningMixins } from '@v/project-trainning/index.js'
+import { TraningMixins } from '@/view/training-project/index.js'
 
 export default {
   mixins: [TraningMixins],
