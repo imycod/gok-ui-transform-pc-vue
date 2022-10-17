@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import TARINING_API from './api/training-project.js';
+const TARINING_API = require('./api/training-project.js')
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,

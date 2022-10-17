@@ -25,7 +25,7 @@
            <div class="handle-btn">立即申请</div>
         </div>
     </div>
-    <img src="~@/assets/images/bt.png" alt="" class="bt">
+    <img src="~@/assets/images/bt1.png" alt="" class="bt">
   </div>
 </template>
 

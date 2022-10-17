@@ -22,9 +22,9 @@
     <div class="r-ing" v-if="true">
       <!-- 进度 -->
       <div class="progress">
-        <i-circle :percent="item.remainPercent" size="72" :stroke-color="['#FFBA4E', '#FB771A']">
-          <span class="demo-Circle-inner" style="font-size: 24px">{{ item.remainPercent }}%</span>
-        </i-circle>
+        <!--        <i-circle :percent="item.remainPercent" size="72" :stroke-color="['#FFBA4E', '#FB771A']">-->
+        <!--          <span class="demo-Circle-inner" style="font-size: 24px">{{ item.remainPercent }}%</span>-->
+        <!--        </i-circle>-->
       </div>
       <!-- 距交付 -->
       <div class="push">距交付: {{ item.remainCnt }}天</div>
@@ -33,6 +33,7 @@
 </template>
 <script>
 import { TraningMixins } from '@/view/training-project/index.js'
+import { dateFormat } from '@/utils/filters.js'
 
 export default {
   mixins: [TraningMixins],
@@ -42,6 +43,9 @@ export default {
       default: null,
       required: true,
     },
+  },
+  filters:{
+    dateFormat,
   },
   data () {
     return {}

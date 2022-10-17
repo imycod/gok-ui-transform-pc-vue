@@ -1,7 +1,8 @@
 <template>
   <div class="training">
     <div class="top between" :style="topStyle">
-      <banner></banner>
+<!--      <banner></banner>-->
+      <div></div>
       <user-card></user-card>
     </div>
     <div class="doing m-t-14" v-if="isLogined">
@@ -17,6 +18,7 @@ import components from './components/loaderComponent.js'
 import DoingProject from '@/view/training-project/components/doing-project.vue';
 import mixins from '../entrance-mixins.js';
 import request, { TARINING_API } from '@/utils/request.js';
+
 
 export default {
   mixins: [mixins],
@@ -43,10 +45,8 @@ export default {
   methods: {
     async getProcessProject () {
       // todo 把data删掉
-      const { data } = await request(TARINING_API.getProcessProject, {})
-      this.processProject = [].concat(data.data)
-
-      console.log(this.processProject)
+      const { data } = await request(TARINING_API.getProcessProject(), {})
+      this.processProject = [].concat(data)
     }
   },
   components: {

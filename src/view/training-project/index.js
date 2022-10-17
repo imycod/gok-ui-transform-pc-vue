@@ -76,6 +76,8 @@ const btnStatusEnum = {
   end: '已结束'
 };
 
+import entrace from "@/view/training-project/home/entrance-mixins.js"
+
 const TraningMixins = {
   data () {
     return {
@@ -107,7 +109,7 @@ const TraningMixins = {
         } = project;
 
         // 返回立即申请状态 TODO:注意判断状态是不是字符串还是数字
-        if (!applyFlag || !this.$one.uc.api.isLogined()) {
+        if (!applyFlag || entrace.computed.isLogined()) {
           return this.getInstance(btnStatusEnum.unApply);
         }
         // 返回已申请状态

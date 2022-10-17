@@ -42,8 +42,8 @@ export default {
   methods: {
     async getBannerList () {
       // todo 把 params和data删掉
-      const { data } = await request(TARINING_API.getProjectBanner, { params:{count:3} })
-      this.carouselList = [].concat(data.data)
+      const { data } = await request(TARINING_API.getProjectBanner(), { params:{count:3} })
+      this.carouselList = [].concat(data)
     },
     /**
      * @description: 点击图片

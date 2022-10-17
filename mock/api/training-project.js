@@ -1,159 +1,182 @@
 const Mock = require('mockjs')
 
-const List = []
-const count = 100
-
-const baseContent = '<p>I am testing data, I am testing data.</p><p><img src="https://wpimg.wallstcn.com/4c69009c-0fd4-4153-b112-6cb53d1cf943"></p>'
-const image_uri = 'https://wpimg.wallstcn.com/e4558086-631c-425c-9430-56ffb46e70b3'
-
-for (let i = 0; i < count; i++) {
-  List.push(Mock.mock({
-    id: '@increment',
-    timestamp: +Mock.Random.date('T'),
-    author: '@first',
-    reviewer: '@first',
-    title: '@title(5, 10)',
-    content_short: 'mock data',
-    content: baseContent,
-    forecast: '@float(0, 100, 2, 2)',
-    importance: '@integer(1, 3)',
-    'type|1': ['CN', 'US', 'JP', 'EU'],
-    'status|1': ['published', 'draft'],
-    display_time: '@datetime',
-    comment_disabled: true,
-    pageviews: '@integer(300, 5000)',
-    image_uri,
-    platforms: ['a-platform']
-  }))
+const api = {
+  training:require('@/utils/api/training-project.js')
 }
 
-const swiper2 = Mock.mock({
-  'name': '@cname',
-  'units': '福建国科信息科技有限公司',
-  'position': '人才运营总监',
-  'imgUrl': '@image(80)',
-  'brief': '@cparagraph'
-})
+let List=[] // 存储用来id找到对应详情
+function generate(type, count = 1) {
+  const image_uri = 'https://wpimg.wallstcn.com/e4558086-631c-425c-9430-56ffb46e70b3'
+
+  function toloop(count, obj) {
+    let list = []
+    for (let i = 0; i < count; i++) {
+      list.push(Mock.mock(obj))
+    }
+    return list
+  }
+
+  let obj = {}
+  switch (type) {
+    case 'banners':
+      obj = {
+        id: '@increment',
+        title: '@title(5, 10)',
+        resourceType: '@integer(1, 10)',
+        coverUrl: image_uri,
+        resourceValue: '',
+      }
+      return toloop(count, obj)
+    case 'cases':
+      obj = {
+        "id": '@increment',
+        "context": "@cparagraph()",
+        "labels|1-4": [
+          "good job",
+          "四字成语",
+          "四字成",
+        ],
+        "beginTime": '@datetime("T")',
+        "name": "@ctitle",
+        "areas|1-6": [
+          {
+            "province": "@province()",
+            "city": "@city()",
+            "county": "@county()"
+          },
+        ],
+        "endTime": '@datetime("T")'
+      }
+      List=toloop(count, obj)
+      return List
+    case  'project':
+      obj = {
+        "id": '@uid',
+        "remainPercent": '@integer(1, 100)', // 进度百分比
+        "remainCnt": '@integer(1, 100)', // 距交付天数
+        "beginTime": '@datetime("T")', // 项目开始时间
+        "name": "@ctitle", // 项目名称
+        "endTime": '1671260683000', // 项目结束时间
+        "source":1,
+        "status":"@integer(2, 3)",
+        "deadlineTime":'1671260683000',
+        "applyFlag":true,
+        "labels": [ // todo.. 后端字段忘给了
+          "数据通信",
+          "@city()",
+        ],
+      }
+      return toloop(count, obj)
+  }
+
+}
+
+
+const users = {
+  avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+  name: '@name',
+  applyCnt: '@integer(1, 10)',
+  applyRedFlag: '@boolean()',
+  processCnt: '@integer(1, 10)',
+  processRedFlag: '@boolean()',
+  projectCnt: '@integer(1, 10)',
+  projectRedFlag: '@boolean()',
+}
+
+// 案例详情
+const detailCase={
+  "background":"智慧园区是某企业搬迁点建设项目之一，内含可容纳320人的会议室、展示大厅、休息室、更衣室、餐厅等空间。2021年，启动从园区智慧改造工作，同时融入智能化设计。智慧园区是某企业搬迁点建设项目之一，内含可容纳320人的会议室、展示大厅、休息室、更衣室、餐厅等空间。2021年，启动从园区智慧改造工作，同时融入智能化设计。",
+  "overview":"01　 智能照明 可视化智能控制 会议室内装置了壁灯、筒灯、灯带、灯条等大大小小数量繁多的灯具，如果使用传统开关，不仅影响墙面美观不说，更让开关操作复杂化。 而配备了GVS臻系列触控屏Z10之后，则让这种烦忧一扫而空。 02　 智能场景一键开启 Z10智能屏不仅可以随意控制会议室内的智能设备，还可以根据会议需求打造不同的场景模式：会议场景、演讲场景、影音场景、清扫场景、全开/全关.Z10智能屏不仅可以随意控制会议室内的智能设备，还可以根据会议需求打造不同的场景模式：会议场景、演讲场景、影音场景、清扫场景、全开/全关。 03　 手机app控制 方便快捷 除了面板控制、感应控制，工作人员还可通过手机app了解会议中心内部各设备的运行状态，并进行实时控制。除了面板控制、感应控制，工作人员还可通过手机app了解会议中心内部各设备的运行状态，并进行实时控制。",
+  "teams|0-8": [
+    {
+      "name": "@cname",
+      "units": "福建国科信息科技有限公司",
+      "position": "人才运营总监",
+      "imgUrl": "@image(80)",
+      "brief": "@cparagraph"
+    },
+  ],
+  "pictures|1-4": [
+    "https://images.pexels.com/photos/48794/boy-walking-teddy-bear-child-48794.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/248280/pexels-photo-248280.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/89095/pexels-photo-89095.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/669319/pexels-photo-669319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/669319/pexels-photo-669319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  ]
+}
 
 module.exports = [
   {
-    url: '/gok-ui/swiper2',
+    url: api.training.getProjectBanner(),
+    type: 'get',
+    response: config => {
+      const {count} = config.query
+      return {
+        code: 20000,
+        data: generate('banners', count)
+      }
+    }
+  },
+  {
+    url: api.training.getCaseProject(),
+    type: 'get',
+    response: config => {
+      const {count} = config.query
+      return {
+        code: 20000,
+        data: generate('cases', count)
+      }
+    }
+  },
+  {
+    url: api.training.getMemberInfo(),
     type: 'get',
     response: _ => {
       return {
         code: 20000,
-        data: () => {
-          const list = []
-          for (let i = 0; i < 5; i++) {
-            list.push(swiper2)
-          }
-          return list
-        },
-      }
-    },
-  },
-  {
-    url: '/vue-element-admin/article/list',
-    type: 'get',
-    response: config => {
-      const {
-        importance,
-        type,
-        title,
-        page = 1,
-        limit = 20,
-        sort
-      } = config.query
-
-      let mockList = List.filter(item => {
-        if (importance && item.importance !== +importance) return false
-        if (type && item.type !== type) return false
-        if (title && item.title.indexOf(title) < 0) return false
-        return true
-      })
-
-      if (sort === '-id') {
-        mockList = mockList.reverse()
-      }
-
-      const pageList = mockList.filter((item, index) => index < limit * page && index >= limit * (page - 1))
-
-      return {
-        code: 20000,
-        data: {
-          total: mockList.length,
-          items: pageList
-        }
+        data: users
       }
     }
   },
-
   {
-    url: '/vue-element-admin/article/detail',
+    url: api.training.getProcessProject(),
     type: 'get',
     response: config => {
-      const { id } = config.query
+      const {count}=config.query
+      return {
+        code: 20000,
+        data:count ? generate('project',count) : generate('project')
+      }
+    }
+  },
+  {
+    url: '/tac/jk-project-cases',
+    type: 'get',
+    response: config => {
+      const {count}=config.query
+      return {
+        code: 20000,
+        data: generate('cases', count)
+      }
+    }
+  },
+  {
+    url: '/tac/project/detail', // mock会匹配前置路径，所以目前暂无解决办法，路径不能一样
+    type: 'get',
+    response: config => {
+      const {id} = config.query
       for (const article of List) {
         if (article.id === +id) {
           return {
             code: 20000,
-            data: article
+            data: {
+              ...article,
+              ...detailCase
+            }
           }
         }
       }
     }
   },
-
-  {
-    url: '/vue-element-admin/article/pv',
-    type: 'get',
-    response: _ => {
-      return {
-        code: 20000,
-        data: {
-          pvData: [
-            {
-              key: 'PC',
-              pv: 1024
-            },
-            {
-              key: 'mobile',
-              pv: 1024
-            },
-            {
-              key: 'ios',
-              pv: 1024
-            },
-            {
-              key: 'android',
-              pv: 1024
-            }
-          ]
-        }
-      }
-    }
-  },
-
-  {
-    url: '/vue-element-admin/article/create',
-    type: 'post',
-    response: _ => {
-      return {
-        code: 20000,
-        data: 'success'
-      }
-    }
-  },
-
-  {
-    url: '/vue-element-admin/article/update',
-    type: 'post',
-    response: _ => {
-      return {
-        code: 20000,
-        data: 'success'
-      }
-    }
-  }
 ]
 

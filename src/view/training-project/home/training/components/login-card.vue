@@ -83,8 +83,8 @@ export default {
      */
     async getUserInfoForProject () {
       // todo 把data删掉
-      const { data } = await request(TARINING_API.getUserInfoForProject, {})
-      this.userInfo = data.data
+      const { data } = await request(TARINING_API.getMemberInfo(), {})
+      this.userInfo = data
     },
     /**
      * @description: 设置面试管理
