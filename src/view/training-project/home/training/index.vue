@@ -1,7 +1,8 @@
 <template>
-  <div class="training">
-    <div class="top between" :style="topStyle">
-<!--      <banner></banner>-->
+  <div class="training m-auto">
+    <!--  :style="topStyle" -->
+    <div class="top between">
+    <!--  <banner></banner>-->
       <div></div>
       <user-card></user-card>
     </div>

@@ -1,15 +1,7 @@
-<!--
- * @Author: lpj 1248708823@qq.com
- * @Date: 2022-10-10 11:43:19
- * @LastEditors: lpj 1248708823@qq.com
- * @LastEditTime: 2022-10-13 10:53:16
- * @FilePath: \college-teaching\src\view\project-trainning\home\inex.vue
- * @Description: 项目实训首页
--->
 <template>
- <div class="page-container project-training">
+ <div class="page-container project-training pt-28">
    <!-- 这里有tab标签切换 -->
-    <div class="navbar" v-if="isLogined && tenantId">
+    <div class="navbar" v-if="false">
       <navbar @tabClick="tabClick"></navbar>
     </div>
    <router-view></router-view>
@@ -43,7 +35,6 @@ export default {
 </script>
 <style lang='stylus' scoped>
 .page-container{
-  margin-top: 32px;
   .navbar{
     position: fixed;
     z-index: 333;
