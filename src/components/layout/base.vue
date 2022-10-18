@@ -12,6 +12,5 @@ export default {
 
 <style lang="stylus" scoped>
 .layout-base {
-
 }
 </style>

@@ -4,15 +4,15 @@ export default [
     meta: {
       title: '面板'
     },
-    redirect:'/dashboard/1',
-    component: resolve => require(['@/components/layout/base.vue'], resolve),
+    redirect:'/tracking',
+    component: resolve => require(['@/view/dashboard/layout/index.vue'], resolve),
     children: [
       {
-        path: '/dashboard/1',
+        path: '/tracking',
         meta: {
-          title: '面板1'
+          title: 'tracking'
         },
-        component: resolve => require(['@/view/dashboard/dash1.vue'], resolve),
+        component: resolve => require(['@/view/dashboard/tracking.vue'], resolve),
       },
     ]
   },
