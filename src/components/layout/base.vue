@@ -1,7 +1,7 @@
 <template>
-<div class="layout-base">
-
-</div>
+  <div class="layout-base">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.layout-base{
+.layout-base {
 
 }
 </style>

@@ -4,8 +4,8 @@ export default [
     path: '/training-home/training'
   },
   {
-    name: '服务',
-    path: '/service'
+    name: '面板',
+    path: '/dashboard'
   },
   {
     name: '联系我们',

@@ -2,9 +2,11 @@ import Router from 'vue-router'
 import Vue from 'vue'
 
 import TrainingProjectRoute from './module/training-project.js'
+import dashboard from '@/router/module/dashboard.js';
 
 const routes = [
-  ...TrainingProjectRoute
+  ...TrainingProjectRoute,
+  ...dashboard,
 ]
 const routerPush = Router.prototype.push;
 Router.prototype.push = function push (location) {
