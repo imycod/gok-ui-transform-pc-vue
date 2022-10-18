@@ -1,9 +1,13 @@
 <template>
   <div class="training m-auto">
     <!--  :style="topStyle" -->
-    <div class="top between">
-      <banner></banner>
-      <user-card></user-card>
+    <div class="md:flex">
+      <div class="md:w-3/5">
+        <banner></banner>
+      </div>
+      <div class="md:w-2/5 sm:w-32">
+        <user-card></user-card>
+      </div>
     </div>
     <div class="doing m-t-14" v-if="isLogined">
       <doing-project v-for="item in processProject" :key="item.id" :item="item"></doing-project>

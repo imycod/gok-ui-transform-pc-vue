@@ -1,7 +1,7 @@
 <template>
   <div class="md:max-w-6xl md:mx-auto px-4 py-8">
 
-    <div class="bg-red-200 text-red-700 px-6 py-4 rounded-lg relative mb-5" role="alert" x-data="{ open: true }"
+    <div class="bg-red-200  text-red-700 px-6 py-4 rounded-lg relative mb-5" role="alert" x-data="{ open: true }"
          x-show.transition="open">
       <div class="mr-4">
         <strong class="font-bold">Account Due!</strong>
@@ -20,7 +20,7 @@
 					</span>
     </div>
 
-    <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center justify-between  mb-4">
       <h2 class="text-xl font-bold text-gray-800">Dashboard</h2>
 
       <button

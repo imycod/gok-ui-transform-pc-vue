@@ -107,9 +107,9 @@ const TraningMixins = {
           deadlineTime,
           source
         } = project;
-
+        console.log('project------------',project)
         // 返回立即申请状态 TODO:注意判断状态是不是字符串还是数字
-        if (!applyFlag || entrace.computed.isLogined()) {
+        if (!applyFlag && entrace.computed.isLogined()) {
           return this.getInstance(btnStatusEnum.unApply);
         }
         // 返回已申请状态

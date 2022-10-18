@@ -55,7 +55,6 @@ common-text-style() {
 }
 
 .case-card {
-  width: 1064px;
   height: 180px;
   box-sizing:border-box;
   background: url("~@/assets/images/bg1.png") no-repeat center;

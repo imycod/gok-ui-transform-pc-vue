@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <mock v-if="false"></mock>
-    <swiper v-if="false"></swiper>
+<!--    <mock v-if="false"></mock>-->
+<!--    <swiper v-if="false"></swiper>-->
     <!-- 全局授权弹窗 -->
     <authentication></authentication>
     <router-view></router-view>

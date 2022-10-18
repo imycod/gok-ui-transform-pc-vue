@@ -1,8 +1,8 @@
 <template>
   <div class="swiper">
     <swiper1 v-if="false"></swiper1>
-    <swiper2 v-if="swiper2List"  :list="swiper2List"></swiper2>
-    <swiper3 v-if="swiper2List"  :list="swiper2List"></swiper3>
+    <swiper2 v-if="swiper2List" :list="swiper2List"></swiper2>
+    <swiper3 v-if="swiper2List" :list="swiper2List"></swiper3>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 import swiper1 from '@/components/swiper/swiper-v5';
 import swiper2 from '@/components/swiper/swiper-v5-2';
 import swiper3 from '@/components/swiper/swiper-v5-3';
-import request from '@/utils/request';
+import request, {TARINING_API} from '@/utils/request';
 
 export default {
   name: 'swiper',
@@ -19,18 +19,18 @@ export default {
     swiper2,
     swiper3,
   },
-  data () {
+  data() {
     return {
       swiper2List: [],
     }
   },
-  created () {
+  created() {
     this.getSwiper2Data()
   },
   methods: {
-    async getSwiper2Data () {
-      const { data } = await request("/gok-ui/swiper2");
-      this.swiper2List=data
+    async getSwiper2Data() {
+      const {data} = await request(TARINING_API.getMemberInfo, {params: {query: 5}});
+      this.swiper2List = data
     }
   },
 }

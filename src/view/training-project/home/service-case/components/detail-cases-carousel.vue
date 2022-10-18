@@ -84,7 +84,6 @@ export default {
 
 .carousel-gallery {
   margin: 20px 0px 0px 0px;
-  width 1060px;
   overflow hidden;
 
   .swiper-container {

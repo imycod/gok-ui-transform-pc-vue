@@ -1,9 +1,10 @@
 <template>
-  <div class="service-case-detail m-t-18">
+  <div class="service-case-detail m-auto m-t-18">
     <header-card v-if="header" :item="header"></header-card>
     <carousel-cases v-if="info.pictures" :list="info.pictures" @carouselHandle="carouselHandle"></carousel-cases>
     <desc-bg class="m-t-20" :type="1" title="项目背景" subTitle="Background of the project" :content="info.background"></desc-bg>
-    <project-teams-intro v-if="info.teams.length" :list="info.teams"></project-teams-intro>
+    <project-teams-intro v-if="info.teams.length && false" :list="info.teams"></project-teams-intro>
+    <project-teams-intro1 v-if="info.teams.length" :list="info.teams"></project-teams-intro1>
     <desc-bg class="m-t-20" :type="2" title="项目概况" subTitle="Project Overview" :content="info.overview"></desc-bg>
 <!--    <carousel-cases-preview v-if="preview.isShow" :images="info.pictures" @closeHandle="closeHandle":imageIndex="preview.imageIndex"></carousel-cases-preview>-->
   </div>
@@ -14,6 +15,7 @@ import CarouselCases from './components/detail-cases-carousel.vue'
 // import CarouselCasesPreview from './components/carousel-preview.vue'
 import DescBg from './components/projects-desc-bg.vue'
 import ProjectTeamsIntro from './components/project-teams-intro.vue'
+import ProjectTeamsIntro1 from "@/components/swiper/swiper-v5-3.vue"
 
 import cloneDeep from 'lodash/cloneDeep'
 import request, { TARINING_API } from '@/utils/request.js';
@@ -87,11 +89,12 @@ export default {
     // CarouselCasesPreview,
     DescBg,
     ProjectTeamsIntro,
+    ProjectTeamsIntro1,
   }
 }
 </script>
 <style lang='stylus' scoped>
 .service-case-detail {
-
+  width: 1064px;
 }
 </style>

@@ -130,6 +130,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 424px;
+  //width: 100%;
   height: 230px;
 
   // 有求职意向的
@@ -263,6 +264,7 @@ export default {
     top: 0;
     left: 0;
     width: 424px;
+    //width: 100%;
     height: 100px;
     background: linear-gradient(to bottom, #FEEDE6 0%, #FFFFFF 100%);
 

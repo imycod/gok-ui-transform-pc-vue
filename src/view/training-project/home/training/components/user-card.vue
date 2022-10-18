@@ -21,6 +21,6 @@ export default {
 
 <style lang="stylus" scoped>
 .user-card {
-
+  width: 100%;
 }
 </style>
