@@ -4,7 +4,7 @@ import router from './router/index.js'
 
 import "normalize.css"
 import "swiper/css/swiper.min.css"
-import '@/assets/css/index.styl'
+import '@/assets/styles/index.styl'
 
 Vue.config.productionTip = false
 
