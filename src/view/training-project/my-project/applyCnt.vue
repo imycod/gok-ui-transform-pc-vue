@@ -1,6 +1,6 @@
 <template>
 <div class="applyCnt">
-    <opt-card v-for="_ in 7"></opt-card>
+    <opt-card v-for="(_,index) in 7" :key="index"></opt-card>
 </div>
 </template>
 

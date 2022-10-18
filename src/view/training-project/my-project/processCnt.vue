@@ -7,9 +7,8 @@
 </template>
 
 <script>
-import DoingProject from '@v/project-trainning/components/doing-project.vue';
-import request from "@/utils/request.js";
-import TARINING_API from "@/utils/training-project.js"
+import DoingProject from '@/view/training-project/components/doing-project.vue';
+import request,{TARINING_API} from "@/utils/request.js";
 
 export default {
   name: 'processCnt',
@@ -28,7 +27,7 @@ export default {
     async getProcessProject () {
       // todo 把data删掉
       const { data } = await request(TARINING_API.getProcessProject, { params: { count: 5 } })
-      this.processProject = [].concat(data.data)
+      this.processProject = [].concat(data)
     }
   },
 }

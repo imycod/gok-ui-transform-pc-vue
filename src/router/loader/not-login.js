@@ -55,6 +55,15 @@ export default {
             ignoreCheck: ['token', 'tenant']
           },
           component: (resolve) => require(['@/view/training-project/home/service-case/detail.vue'], resolve)
+        },
+        {
+          path: '/training/my-project',
+          name: 'MyProject',
+          meta: {
+            title: '我的项目',
+            ignoreCheck: ['token', 'tenant']
+          },
+          component: (resolve) => require(['@/view/training-project/my-project/index.vue'], resolve)
         }
       ]
     },

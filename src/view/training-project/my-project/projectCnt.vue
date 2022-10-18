@@ -26,7 +26,7 @@ export default {
   methods: {
     async getProjects () {
       const { data } = await request(TARINING_API.getProcessProject, { params: { count: 5 } })
-      this.projects = [].concat(data.data)
+      this.projects = [].concat(data)
     }
   },
 }

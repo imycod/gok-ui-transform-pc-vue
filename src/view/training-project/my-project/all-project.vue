@@ -1,7 +1,7 @@
 <template>
   <div class="about relative">
     <div class="badge absolute t-0 l-0">
-      <img class="w-full h-full" src="~@/assets/images/bt.png" alt="">
+      <img class="w-full h-full" src="~@/assets/images/bt1.png" alt="">
     </div>
     <div class="info">
       <div class="title">
