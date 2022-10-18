@@ -25,6 +25,7 @@
         <!--        <i-circle :percent="item.remainPercent" size="72" :stroke-color="['#FFBA4E', '#FB771A']">-->
         <!--          <span class="demo-Circle-inner" style="font-size: 24px">{{ item.remainPercent }}%</span>-->
         <!--        </i-circle>-->
+<!--        <Styledh3  v-bind="$attrs">这是一段文本</Styledh3>-->
       </div>
       <!-- 距交付 -->
       <div class="push">距交付: {{ item.remainCnt }}天</div>
@@ -32,9 +33,17 @@
   </div>
 </template>
 <script>
-import { TraningMixins } from '@/view/training-project/index.js'
-import { dateFormat } from '@/utils/filters.js'
+import {TraningMixins} from '@/view/training-project/index.js'
+import {dateFormat} from '@/utils/filters.js'
 
+
+import styled from 'vue-styled-components'
+
+// const h3Props = {fontSize: String};
+// const Styledh3 = styled('h3', h3Props)`
+//   font-size: ${props => props.fontSize ? props.fontSize + 'em' : '1.25em'};
+//   color: #00BB85;
+// `
 export default {
   mixins: [TraningMixins],
   props: {
@@ -44,14 +53,20 @@ export default {
       required: true,
     },
   },
-  filters:{
+  filters: {
     dateFormat,
   },
-  data () {
+  data() {
     return {}
   },
-  methods: {},
-  components: {}
+  created() {
+  },
+  methods: {
+
+  },
+  components: {
+    // Styledh3
+  }
 }
 </script>
 <style lang='stylus' scoped>

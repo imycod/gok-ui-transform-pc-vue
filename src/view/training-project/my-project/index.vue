@@ -9,7 +9,9 @@
     <!--        </TabPane>-->
     <!--      </Tabs>-->
     <div class="mt-10">
-      <component :is="currentTabComponent" v-if="currentTabComponent" @getDot="getDot"></component>
+      <transition-fade>
+        <component :is="currentTabComponent" v-if="currentTabComponent" @getDot="getDot"></component>
+      </transition-fade>
     </div>
   </div>
 </template>
@@ -17,8 +19,7 @@
 import {PROJECT_MANAGE} from '@/view/training-project/index.js';
 import {setCountNum} from './index.js'
 import components from './loaderComponent.js'
-
-console.log(components)
+import TransitionFade from "@/components/transition/fade.js"
 export default {
   data() {
     return {
@@ -97,6 +98,7 @@ export default {
   },
   components: {
     ...components,
+    TransitionFade,
   }
 }
 </script>

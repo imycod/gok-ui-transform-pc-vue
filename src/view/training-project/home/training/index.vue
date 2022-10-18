@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="doing m-t-14" v-if="isLogined">
-      <doing-project v-for="item in processProject" :key="item.id" :item="item"></doing-project>
+      <doing-project fontSize="13" v-for="item in processProject" :key="item.id" :item="item"></doing-project>
     </div>
     <div class="pages">
       <page-training></page-training>
