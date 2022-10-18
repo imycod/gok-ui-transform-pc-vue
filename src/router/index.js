@@ -2,11 +2,17 @@ import Router from 'vue-router'
 import Vue from 'vue'
 
 import TrainingProjectRoute from './module/training-project.js'
+import home from "@/router/module/home.js"
+import contact from "@/router/module/contact.js"
 import dashboard from '@/router/module/dashboard.js';
+import notLogin from "@/router/loader/not-login.js"
 
 const routes = [
-  ...TrainingProjectRoute,
   ...dashboard,
+  ...TrainingProjectRoute,
+  ...home,
+  ...contact,
+  // notLogin,
 ]
 const routerPush = Router.prototype.push;
 Router.prototype.push = function push (location) {

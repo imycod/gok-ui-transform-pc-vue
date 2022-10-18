@@ -1,7 +1,6 @@
 <template>
-  <div class="layout">
-    layout
-    <router-view></router-view>
+  <div class="about pt-28">
+    about
   </div>
 </template>
 
@@ -12,7 +11,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.layout {
+.about {
 
 }
 </style>

@@ -2,7 +2,6 @@
   <div id="app">
     <mock v-if="false"></mock>
     <swiper v-if="false"></swiper>
-
     <router-view></router-view>
   </div>
 </template>

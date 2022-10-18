@@ -6,7 +6,6 @@ const TraningManage = {
     ignoreCheck: ['token', 'tenant']
 
   },
-  component: resolve => require(['@/view/training-project/layout/index.vue'], resolve),
   children: [
     //   {
     //   path: 'project-detail',
@@ -35,9 +34,9 @@ const TraningManage = {
 }
 const trainingChildren = [
   {
-    path: 'training-home',
+    path: '/training-home',
     name: 'TrainingHome',
-    redirect: '/training-home/training',
+    redirect:'/training-home/training',
     meta: {
       title: '实训首页',
       ignoreCheck: ['token', 'tenant']
@@ -76,11 +75,12 @@ const trainingChildren = [
 ]
 const TrainingProjectRoute = [
   {
-    path: '/',
+    path: '/training',
+    redirect:'/training-home',
     meta: {
       title: '项目实训'
     },
-    component: resolve => require(['@/view/training-project/layout/template.vue'], resolve),
+    component: resolve => require(['@/components/layout/not-login.vue'], resolve),
     children: trainingChildren
   },
   // TraningManage,
