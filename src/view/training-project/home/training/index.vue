@@ -20,28 +20,30 @@
 <script>
 import components from './components/loaderComponent.js'
 import DoingProject from '@/view/training-project/components/doing-project.vue';
-import mixins from '../entrance-mixins.js';
+// import mixins from '../entrance-mixins.js';
 import request, { TARINING_API } from '@/utils/request.js';
+import {mapGetters} from "vuex";
 
 
 export default {
-  mixins: [mixins],
+  // mixins: [mixins],
   data () {
     return {
       processProject: [],
     }
   },
   computed: {
-    topStyle () {
-      let marginTop = ''
-      // real base 26 + 21
-      if (this.isLogined && this.tenantId) {
-        marginTop = 60 + 21
-      } else {
-        marginTop = 72 + 12;
-      }
-      return `margin-top:${marginTop}px`
-    }
+    ...mapGetters(['isLogined']),
+    // topStyle () {
+    //   let marginTop = ''
+    //   // real base 26 + 21
+    //   if (this.isLogined && this.tenantId) {
+    //     marginTop = 60 + 21
+    //   } else {
+    //     marginTop = 72 + 12;
+    //   }
+    //   return `margin-top:${marginTop}px`
+    // }
   },
   created () {
     this.getProcessProject()

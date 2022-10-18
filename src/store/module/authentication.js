@@ -27,6 +27,12 @@ export default {
       }
       state.dialog.showLogin = value;
     },
+    setLogin(state, value){
+      if (value) {
+        closeAll(state)
+      }
+      state.isLogin = value;
+    }
   },
 
 }

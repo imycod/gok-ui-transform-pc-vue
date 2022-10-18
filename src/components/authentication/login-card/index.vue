@@ -9,7 +9,7 @@
         <div
             class="w-full max-w-lg p-3 relative mx-auto my-auto rounded-xl shadow-lg bg-white"
         >
-          <div class="bd">
+          <div class="">
             <login></login>
           </div>
         </div>

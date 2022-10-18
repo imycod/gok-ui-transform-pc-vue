@@ -8,13 +8,14 @@
 </template>
 
 <script>
-// import { isLogin } from '@/utils/business/auth' // 是否登录
 export default {
   methods: {
     login () {
-      // isLogin(() => {
-      //   window.reload()
-      // })
+      // if(this.$one.uc.api.isLogined()){
+      // window.reload()
+      // return
+      // }
+      this.$store.commit('authentication/setShowLogin',true)
     }
   }
 }

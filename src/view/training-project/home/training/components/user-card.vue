@@ -8,10 +8,14 @@
 <script>
 import LoginCard from "./login-card.vue";
 import UnLoginCard from "./un-login-card.vue";
-import mixins from "../../entrance-mixins.js";
+import {mapGetters} from "vuex";
+// import mixins from "../../entrance-mixins.js";
 export default {
-  name:'user-card',
-  mixins:[mixins],
+  name: 'user-card',
+  // mixins:[mixins],
+  computed: {
+    ...mapGetters(['isLogined'])
+  },
   components: {
     LoginCard,
     UnLoginCard,
