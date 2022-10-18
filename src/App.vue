@@ -2,6 +2,7 @@
   <div id="app">
     <mock v-if="false"></mock>
     <swiper v-if="false"></swiper>
+    <authentication></authentication>
     <router-view></router-view>
   </div>
 </template>
@@ -9,12 +10,14 @@
 <script>
 import mock from '@/view/mock.vue'
 import swiper from '@/view/swiper.vue'
+import authentication from "@/view/authentication/index.vue"
 
 export default {
   name: 'App',
   components: {
     mock,
     swiper,
+    authentication,
   }
 }
 </script>

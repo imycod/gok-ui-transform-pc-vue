@@ -14,7 +14,13 @@ export default {
     navbar,
   },
   data () {
-    return {
+    return {}
+  },
+  methods: {
+    signin () {
+      modal.showModal()
+    },
+    signup () {
 
     }
   },
