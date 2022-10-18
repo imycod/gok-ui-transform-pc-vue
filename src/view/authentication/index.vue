@@ -21,6 +21,7 @@ export default {
 
 <style lang="stylus" scoped>
 .authentication {
-
+  width: 100%;
+  height: 100%;
 }
 </style>
