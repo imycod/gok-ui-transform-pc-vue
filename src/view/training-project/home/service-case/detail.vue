@@ -5,13 +5,13 @@
     <desc-bg class="m-t-20" :type="1" title="项目背景" subTitle="Background of the project" :content="info.background"></desc-bg>
     <project-teams-intro v-if="info.teams.length" :list="info.teams"></project-teams-intro>
     <desc-bg class="m-t-20" :type="2" title="项目概况" subTitle="Project Overview" :content="info.overview"></desc-bg>
-    <carousel-cases-preview v-if="preview.isShow" :images="info.pictures" @closeHandle="closeHandle":imageIndex="preview.imageIndex"></carousel-cases-preview>
+<!--    <carousel-cases-preview v-if="preview.isShow" :images="info.pictures" @closeHandle="closeHandle":imageIndex="preview.imageIndex"></carousel-cases-preview>-->
   </div>
 </template>
 <script>
 import HeaderCard from './components/detail-header-card.vue';
 import CarouselCases from './components/detail-cases-carousel.vue'
-import CarouselCasesPreview from './components/carousel-preview.vue'
+// import CarouselCasesPreview from './components/carousel-preview.vue'
 import DescBg from './components/projects-desc-bg.vue'
 import ProjectTeamsIntro from './components/project-teams-intro.vue'
 
@@ -49,8 +49,8 @@ export default {
     async init () {
       const id = this.id
 
-      const { data } = await request('/tac/project/detail', { params: { id: id } })
-      this.info = data.data
+      const { data } = await request(TARINING_API.getCaseProjectDetail, { params: { id: id } })
+      this.info = data
 
       // preview data structure
       this.info.pictures = [
@@ -84,7 +84,7 @@ export default {
   components: {
     HeaderCard,
     CarouselCases,
-    CarouselCasesPreview,
+    // CarouselCasesPreview,
     DescBg,
     ProjectTeamsIntro,
   }

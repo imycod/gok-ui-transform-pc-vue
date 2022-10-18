@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     tabClick(item){
-      console.log(item)
       this.$router.push(item.path)
     },
   },

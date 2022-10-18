@@ -4,6 +4,7 @@ export default {
   children:[
     {
       path:'/home',
+      name: 'Home',
       meta: {
         title: '首页'
       },
@@ -12,7 +13,7 @@ export default {
     {
       path: '/training',
       redirect:'/training',
-      name: 'training',
+      name: 'TrainingHome',
       meta: {
         title: '实训首页',
         ignoreCheck: ['token', 'tenant']
@@ -37,15 +38,24 @@ export default {
         //   },
         //   component: (resolve) => require(['@/view/training-project/home/excellent-project/index.vue'], resolve)
         // },
-        // {
-        //   path: 'service-case',
-        //   name: 'ServiceCase',
-        //   meta: {
-        //     title: '服务案例',
-        //     ignoreCheck: ['token', 'tenant']
-        //   },
-        //   component: (resolve) => require(['@/view/training-project/home/service-case/index.vue'], resolve)
-        // }
+        {
+          path: '/training/service-case',
+          name: 'ServiceCase',
+          meta: {
+            title: '服务案例',
+            ignoreCheck: ['token', 'tenant']
+          },
+          component: (resolve) => require(['@/view/training-project/home/service-case/index.vue'], resolve)
+        },
+        {
+          path: '/training/service-case-detail/:id',
+          name: 'ServiceCaseDetail',
+          meta: {
+            title: '服务案例详情',
+            ignoreCheck: ['token', 'tenant']
+          },
+          component: (resolve) => require(['@/view/training-project/home/service-case/detail.vue'], resolve)
+        }
       ]
     },
     {

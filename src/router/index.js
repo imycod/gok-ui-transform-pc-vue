@@ -9,10 +9,10 @@ import notLogin from "@/router/loader/not-login.js"
 
 const routes = [
   ...dashboard,
-  ...TrainingProjectRoute,
-  ...home,
-  ...contact,
-  // notLogin,
+  // ...TrainingProjectRoute,
+  // ...home,
+  // ...contact,
+  notLogin,
 ]
 const routerPush = Router.prototype.push;
 Router.prototype.push = function push (location) {

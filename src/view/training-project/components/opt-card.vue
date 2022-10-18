@@ -2,11 +2,11 @@
   <div class="excellent-card">
     <h3>电力机房搬迁项目电力机房搬迁项目电力机房搬迁项目</h3>
     <div class="box">
-        <div class="box-left">
+        <div class="box-left flex center">
             <img class="box-icon" src="~@/assets/images/clock.png" alt="">
             <span>2022-08-01~2022-08-31</span>
         </div>
-        <div class="box-right">
+        <div class="box-right flex center">
             <img class="box-icon" src="~@/assets/images/people.png" alt="">
             <span>人数需求：5人</span>
         </div>
@@ -17,7 +17,7 @@
         <span class="place">厦门</span>
     </div>
     <div class="box">
-        <div class="box-left">
+        <div class="box-left flex center">
             <img class="box-icon" src="~@/assets/images/clock.png" alt="">
             <span>申请截止：2022-08-31</span>
         </div>

@@ -1,5 +1,5 @@
 <template>
- <div class="service-case">
+ <div class="service-case m-auto">
     <case-card @click="toDetail" class="m-b-28 cp" v-for="(item,index) in list" :item="item" :key="item.id"></case-card>
  </div>
 </template>
@@ -22,9 +22,8 @@ export default {
   },
   methods: {
     async init(){
-      // todo 把 params和data删掉
       const {data}= await request(TARINING_API.getJkCases,{ params:{count:9} })
-      this.list=data.data
+      this.list=data
     },
     toDetail(item){
       this.$router.push(`/training/service-case-detail/${item.id}`)
@@ -38,7 +37,6 @@ export default {
 <style lang='stylus' scoped>
 .service-case{
   width: 1064px;
-  margin-top:81px;
   .cp{
     hvr-grow-shadow(1.02)
   }

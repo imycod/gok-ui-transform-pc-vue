@@ -31,14 +31,14 @@ export default {
       componentList: [
         {
           headerImgSrc: optImg,
-          morePath: '/training-home/excellent-project',
+          morePath: '/training/excellent-project',
           componentName: 'opt-project',
           isLoader: false,
           isEmpty: false
         },
         {
           headerImgSrc: caseImg,
-          morePath: '/training-home/service-case',
+          morePath: '/training/service-case',
           componentName: 'case-project',
           isLoader: false,
           isEmpty: false

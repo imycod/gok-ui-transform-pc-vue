@@ -107,7 +107,7 @@ const detailCase={
 
 module.exports = [
   {
-    url: api.training.getProjectBanner(),
+    url: api.training.getProjectBanner,
     type: 'get',
     response: config => {
       const {count} = config.query
@@ -118,7 +118,7 @@ module.exports = [
     }
   },
   {
-    url: api.training.getCaseProject(),
+    url: api.training.getCaseProject,
     type: 'get',
     response: config => {
       const {count} = config.query
@@ -129,7 +129,7 @@ module.exports = [
     }
   },
   {
-    url: api.training.getMemberInfo(),
+    url: api.training.getMemberInfo,
     type: 'get',
     response: _ => {
       return {
@@ -139,7 +139,7 @@ module.exports = [
     }
   },
   {
-    url: api.training.getProcessProject(),
+    url: api.training.getProcessProject,
     type: 'get',
     response: config => {
       const {count}=config.query
@@ -161,7 +161,7 @@ module.exports = [
     }
   },
   {
-    url: '/tac/project/detail', // mock会匹配前置路径，所以目前暂无解决办法，路径不能一样
+    url: api.training.getCaseProjectDetail, // mock会匹配前置路径，所以目前暂无解决办法，路径不能一样
     type: 'get',
     response: config => {
       const {id} = config.query

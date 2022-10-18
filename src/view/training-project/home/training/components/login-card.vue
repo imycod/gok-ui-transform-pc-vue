@@ -83,7 +83,7 @@ export default {
      */
     async getUserInfoForProject () {
       // todo 把data删掉
-      const { data } = await request(TARINING_API.getMemberInfo(), {})
+      const { data } = await request(TARINING_API.getMemberInfo, {})
       this.userInfo = data
     },
     /**

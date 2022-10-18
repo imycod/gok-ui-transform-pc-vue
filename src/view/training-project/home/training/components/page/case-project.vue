@@ -23,9 +23,9 @@ export default {
   },
   methods: {
     async init() {
-      // todo 把params和data删掉
       const {data}= await request(TARINING_API.getCaseProject,{ params:{count:3} })
-      this.list=data.data
+      this.list=data
+      console.log('this.list',this.list)
     },
     toDetail (item) {
       this.$router.push(`/training/service-case-detail/${item.id}`)

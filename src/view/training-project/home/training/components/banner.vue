@@ -1,12 +1,13 @@
 <template>
   <div class="banner">
-    <div  v-if="loaded">
-      <img :src="defaultBanner" v-if="carouselList.length == 0" alt="">
-      <Carousel v-else v-model="portalCarouselValue" :autoplay="setting.autoplay" :autoplay-speed="setting.autoplaySpeed" :dots="setting.dots" :radius-dot="setting.radiusDot" :trigger="setting.trigger" :arrow="setting.arrow">
-        <CarouselItem v-for="item in carouselList" :key="item.coverUrl" >
+    <img :src="defaultBanner" v-if="carouselList.length == 0" alt="">
+    <div class="swiper-container" ref="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="(item,index) in carouselList" :key="item.coverUrl">
           <img :src="item.coverUrl" :alt="item.title" class="demo-carousel cp" @click="clickImg(item)">
-        </CarouselItem>
-      </Carousel>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </template>
@@ -15,12 +16,15 @@
 import defaultBanner from '@/assets/images/defalut-banner.png' // 默认头像
 import request, { TARINING_API } from '@/utils/request.js';
 // import { toBannerDetail } from '@/utils/business/banner.js'
+import Swiper from 'swiper'
+
 export default {
-  name:'banner',
+  name: 'banner',
   data () {
     return {
       // 默认图片
       defaultBanner,
+      swiper: null,
       portalCarouselValue: 0,
       setting: {
         autoplay: true,
@@ -31,19 +35,24 @@ export default {
         trigger: 'hover',
         height: 230
       },
-      loaded: false,
       carouselList: []
     }
   },
   async mounted () {
     await this.getBannerList()
-    this.loaded = true
+    this.initSwiper()
   },
   methods: {
     async getBannerList () {
-      // todo 把 params和data删掉
-      const { data } = await request(TARINING_API.getProjectBanner(), { params:{count:3} })
+      const { data } = await request(TARINING_API.getProjectBanner, { params: { count: 3 } })
       this.carouselList = [].concat(data)
+    },
+    initSwiper () {
+      this.swiper = new Swiper('.swiper-container', {
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
     },
     /**
      * @description: 点击图片
@@ -63,9 +72,34 @@ export default {
   height: 230px;
 }
 
-.demo-carousel {
+.swiper-container {
   height: 230px;
   width: 602px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.demo-carousel {
+  width: 100%;
+  height: 100%;
   text-align: center;
   color: #fff;
   font-size: 20px;

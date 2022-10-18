@@ -2,8 +2,7 @@
   <div class="training m-auto">
     <!--  :style="topStyle" -->
     <div class="top between">
-    <!--  <banner></banner>-->
-      <div></div>
+      <banner></banner>
       <user-card></user-card>
     </div>
     <div class="doing m-t-14" v-if="isLogined">
@@ -46,7 +45,7 @@ export default {
   methods: {
     async getProcessProject () {
       // todo 把data删掉
-      const { data } = await request(TARINING_API.getProcessProject(), {})
+      const { data } = await request(TARINING_API.getProcessProject, {})
       this.processProject = [].concat(data)
     }
   },
