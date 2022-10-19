@@ -9,7 +9,7 @@
     <!--        </TabPane>-->
     <!--      </Tabs>-->
     <div class="mt-10">
-      <transition-fade speed="100">
+      <transition-fade speed="10000">
         <component :is="currentTabComponent" v-if="currentTabComponent" @getDot="getDot"></component>
       </transition-fade>
     </div>
