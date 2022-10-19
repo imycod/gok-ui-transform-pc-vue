@@ -70,7 +70,11 @@ export default {
     {
       path: '/contact',
       component: () => import('@/view/about/index.vue'),
-    }
+    },
+    {
+      path: '/mobile',
+      component: () => import('@/view/mobile/index.vue'),
+    },
   ]
 }
 

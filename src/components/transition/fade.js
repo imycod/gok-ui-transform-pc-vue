@@ -2,9 +2,9 @@ import styled from 'vue-styled-components'
 import Vue from "vue"
 
 import TransitionFake from "./fade.vue"
-const Transition = Vue.component('transition',TransitionFake)
+// const Transition = Vue.component('transition',TransitionFake)
 const TransitionProps = {speed: Number}
-const TransitionFade = styled(Transition, TransitionProps)`
+const TransitionFade = styled(TransitionFake, TransitionProps)`
   .fade-enter,
   .fade-leave-to {
     opacity: 0;

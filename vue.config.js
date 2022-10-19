@@ -9,6 +9,14 @@ function resolve(dir) {
 module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
+  // chainWebpack:(config)=>{
+  //   console.log(config)
+  //   return {
+  //     plugins:{
+  //
+  //     },
+  //   }
+  // },
   devServer: {
     // port: 8080,
     // open: false,

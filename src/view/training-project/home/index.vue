@@ -1,5 +1,5 @@
 <template>
- <div class="page-container project-training pt-28">
+ <div class="page-container project-training">
    <!-- 这里有tab标签切换 -->
     <div class="navbar" v-if="false">
       <navbar @tabClick="tabClick"></navbar>

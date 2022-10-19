@@ -11,13 +11,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-//.fade-enter,
-//.fade-leave-to {
-//  opacity: 0;
-//}
-//
-//.fade-enter-active,
-//.fade-leave-active {
-//  transition: opacity 500ms ease-out;
-//}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 500ms ease-out;
+}
 </style>

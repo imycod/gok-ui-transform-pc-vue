@@ -15,4 +15,8 @@ export default [
     name: '联系我们',
     path: '/contact'
   },
+  {
+    name: '移动端',
+    path: '/mobile',
+  },
 ]
