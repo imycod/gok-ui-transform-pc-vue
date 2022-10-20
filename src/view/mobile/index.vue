@@ -15,6 +15,14 @@ export default {
     document.querySelector('html').style.fontSize = 'inherit'
   },
   methods: {
+    setMeta () {
+      let head = document.getElementsByTagName('head');
+      let meta = document.createElement('meta');
+      console.dir(meta);
+      meta.name = 'viewport'
+      meta.content = 'width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=2.0,user-scalable=no'
+      head[0].appendChild(meta)
+    },
     /**
      * @description: 设置基准字体值
      * @return {*}
@@ -26,7 +34,7 @@ export default {
       // document.documentElement.clientWidth/document.documentElement.clientHeight < designWidth/designHeight ?
       const fontSize = (document.documentElement.clientWidth / designWidth) * 12
       // (document.documentElement.clientHeight / designHeight) * 12;
-      document.querySelector('html').style.fontSize = fontSize + 'px'
+      document.querySelector('html').style.fontSize = (document.documentElement.clientWidth * 16) / 750 + 'px'
       console.log('我是设置的字体基准', fontSize)
     }
   },
@@ -37,7 +45,7 @@ export default {
 <style lang="stylus" scoped>
 .mobile-container {
   .test-viewport {
-    font-size: 14px;
+    font-size: 1rem;
     text-align: center;
     background: #13b5b1;
   }
