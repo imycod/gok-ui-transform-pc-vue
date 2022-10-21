@@ -10,7 +10,7 @@
 import swiper1 from '@/components/swiper/swiper-v5';
 import swiper2 from '@/components/swiper/swiper-v5-2';
 import swiper3 from '@/components/swiper/swiper-v5-3';
-import request, {TARINING_API} from '@/utils/request';
+import request, {TARINING_API} from '@/request/index.js';
 
 export default {
   name: 'swiper',

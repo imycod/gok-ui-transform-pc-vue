@@ -6,7 +6,7 @@
 
 <script>
 import CaseCard from "../../../components/case-card.vue";
-import request, { TARINING_API } from '@/utils/request.js';
+import request, { TARINING_API } from '@/request/index.js';
 
 export default {
   name: "case-project",

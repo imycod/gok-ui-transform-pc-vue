@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import request from "@/utils/request.js";
+import request from "@/request/index.js";
 
 export default {
   name: "mock-data",

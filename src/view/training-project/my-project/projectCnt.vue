@@ -8,7 +8,7 @@
 
 <script>
 import AllProject from './all-project.vue'
-import request, { TARINING_API } from '@/utils/request.js';
+import request, { TARINING_API } from '@/request/index.js';
 
 export default {
   name: 'projectCnt',

@@ -21,7 +21,7 @@
 import components from './components/loaderComponent.js'
 import DoingProject from '@/view/training-project/components/doing-project.vue';
 // import mixins from '../entrance-mixins.js';
-import request, { TARINING_API } from '@/utils/request.js';
+import request, { TARINING_API } from '@/request/index.js';
 import {mapGetters} from "vuex";
 
 

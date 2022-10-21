@@ -18,7 +18,7 @@ import ProjectTeamsIntro from './components/project-teams-intro.vue'
 import ProjectTeamsIntro1 from "@/components/swiper/swiper-v5-3.vue"
 
 import cloneDeep from 'lodash/cloneDeep'
-import request, { TARINING_API } from '@/utils/request.js';
+import request, { TARINING_API } from '@/request/index.js';
 
 export default {
   data () {

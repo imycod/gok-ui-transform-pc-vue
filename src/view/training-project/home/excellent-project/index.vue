@@ -38,7 +38,7 @@ import Tabs from './components/tabs.vue';
 import Card from "@v/project-trainning/components/opt-card.vue"
 import LoaderWrapper from '@v/student-job/components/loader-wrapper.vue'; // 加载更多
 import EmptyRecord from '@/components/empty-record'; // 空数据组件
-import request, { TARINING_API } from '@/utils/request.js';
+import request, { TARINING_API } from '@/request/index.js';
 export default {
   components: {
     ExcellentSearch,

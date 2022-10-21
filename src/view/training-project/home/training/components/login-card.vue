@@ -43,7 +43,7 @@
 
 <script>
 import { PROJECT_MANAGE } from '@/view/training-project/index.js';
-import request, { TARINING_API } from '@/utils/request.js';
+import request, { TARINING_API } from '@/request/index.js';
 
 export default {
   data () {

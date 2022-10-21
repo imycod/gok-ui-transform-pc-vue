@@ -1,7 +1,7 @@
 const Mock = require('mockjs')
 
 const api = {
-  training:require('@/utils/api/training-project.js')
+  training:require('@/request/api/training-project.js')
 }
 
 let List=[] // 存储用来id找到对应详情

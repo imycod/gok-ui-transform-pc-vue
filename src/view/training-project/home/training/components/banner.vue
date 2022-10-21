@@ -14,7 +14,7 @@
 
 <script>
 import defaultBanner from '@/assets/images/defalut-banner.png' // 默认头像
-import request, { TARINING_API } from '@/utils/request.js';
+import request, { TARINING_API } from '@/request/index.js';
 // import { toBannerDetail } from '@/utils/business/banner.js'
 import Swiper from 'swiper'
 
