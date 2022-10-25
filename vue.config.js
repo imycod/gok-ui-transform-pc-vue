@@ -12,9 +12,7 @@ module.exports = defineConfig({
   // chainWebpack:(config)=>{
   //   console.log(config)
   //   return {
-  //     plugins:{
-  //
-  //     },
+  //     plugins:{}
   //   }
   // },
   devServer: {
