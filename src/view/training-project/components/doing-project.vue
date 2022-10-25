@@ -37,7 +37,7 @@ import {TraningMixins} from '@/view/training-project/index.js'
 import {dateFormat} from '@/utils/filters.js'
 
 
-import styled from 'vue-styled-components'
+// import styled from 'vue-styled-components'
 
 // const h3Props = {fontSize: String};
 // const Styledh3 = styled('h3', h3Props)`

@@ -19,4 +19,8 @@ export default [
     name: '移动端',
     path: '/mobile',
   },
+  {
+    name: 'DEMO',
+    path: '/demo',
+  },
 ]

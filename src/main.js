@@ -20,6 +20,8 @@ importDirective(Vue); // 注册指令
 
 import 'normalize.css'
 import 'swiper/css/swiper.min.css'
+// import "swiper/swiper-bundle.min.css"
+// import "swiper/swiper-bundle.min.js"
 import '@/assets/styles/index.styl'
 
 Vue.prototype.$bus = bus

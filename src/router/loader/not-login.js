@@ -75,6 +75,10 @@ export default {
       path: '/mobile',
       component: () => import('@/view/mobile/index.vue'),
     },
+    {
+      path: '/demo',
+      component: () => import('@/view/demo/index.vue'),
+    },
   ]
 }
 
