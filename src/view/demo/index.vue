@@ -23,13 +23,13 @@ export default defineComponent({
   setup () {
     function switchover (value) {
       // document.documentElement
-      const themeColor = document.body.style.getPropertyValue('--main-theme-color')
+      const themeColor = document.documentElement.style.getPropertyValue('--main-theme-color')
       if (themeColor === '#000') {
         value = '#fff'
-        document.body.style.setProperty('--main-theme-color', value)
       } else {
-        document.body.style.setProperty('--main-theme-color', value)
+        value = '#000'
       }
+      document.documentElement.style.setProperty('--main-theme-color', value)
     }
 
     return {

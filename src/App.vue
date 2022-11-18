@@ -26,7 +26,7 @@ export default {
   --main-btn-color:#ccc;
 }
 body{
-  background:var(--main-theme-color);
+  background:var(--main-theme-color) !important;
 }
 #app {
 
