@@ -1,3 +1,6 @@
+<!--
+  1. src/view/home/components/growth-path.vue
+-->
 <template>
   <div>
     <div :id="'echart-growth' + index" class="echart-growth"></div>

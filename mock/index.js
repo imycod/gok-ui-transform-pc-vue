@@ -1,9 +1,15 @@
 const Mock = require('mockjs')
 const { param2Obj } = require('./utils')
 
-const article = require('./api/training-project.js')
+const trainings = require('./api/training-project.js')
+const positionManagement = require('./api/position-management.js')
+const information = require('./api/information.js')
+const echarts = require('./api/echarts.js')
 const mocks = [
-  ...article,
+  ...trainings,
+  ...positionManagement,
+  ...information,
+  ...echarts,
 ]
 
 // for front mock

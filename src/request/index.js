@@ -1,6 +1,9 @@
 import axios from 'axios'
 
 const TARINING_API = require('./api/training-project.js')
+const POSITIONMANAGEMENT_API = require('./api/position-management.js')
+const INFOMATION_API = require('./api/information.js')
+const ECHARTS_API = require('./api/echarts.js')
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
@@ -38,7 +41,7 @@ service.interceptors.response.use(
   }
 )
 
-export { TARINING_API }
+export { TARINING_API,POSITIONMANAGEMENT_API,INFOMATION_API,ECHARTS_API }
 
 export default service
 

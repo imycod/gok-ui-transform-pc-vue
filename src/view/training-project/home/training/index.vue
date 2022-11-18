@@ -15,12 +15,12 @@
         <div class="m-b-10" :key="item.id"></div>
       </template>
     </div>
-    <div class="" v-if="true">
+    <div class="p-b-50 m-b-50" v-if="true">
       <doing-project-custom
         :processProject="processProject"
       ></doing-project-custom>
     </div>
-    <div class="pages" v-if="false">
+    <div class="pages p-t-50" v-if="true">
       <page-training></page-training>
     </div>
   </div>

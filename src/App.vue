@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-<!--    <mock v-if="false"></mock>-->
 <!--    <swiper v-if="false"></swiper>-->
     <!-- 全局授权弹窗 -->
     <authentication></authentication>
@@ -9,14 +8,12 @@
 </template>
 
 <script>
-import mock from '@/view/mock.vue'
 import swiper from '@/view/swiper.vue'
 import authentication from "@/view/authentication/index.vue"
 
 export default {
   name: 'App',
   components: {
-    mock,
     swiper,
     authentication,
   }
@@ -24,6 +21,14 @@ export default {
 </script>
 
 <style lang="stylus">
+:root{
+  --main-theme-color:#fff;
+  --main-btn-color:#ccc;
+}
+body{
+  background:var(--main-theme-color);
+}
 #app {
+
 }
 </style>

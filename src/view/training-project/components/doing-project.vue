@@ -34,8 +34,6 @@
 </template>
 <script>
 import {TraningMixins} from '@/view/training-project/index.js'
-import {dateFormat} from '@/utils/filters.js'
-
 
 // import styled from 'vue-styled-components'
 
@@ -52,9 +50,6 @@ export default {
       default: null,
       required: true,
     },
-  },
-  filters: {
-    dateFormat,
   },
   data() {
     return {}
