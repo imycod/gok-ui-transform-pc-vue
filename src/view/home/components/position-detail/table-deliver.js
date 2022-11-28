@@ -1,44 +1,75 @@
+
 let that = ''
 const getThis = (_this) => {
   that = _this;
 }
-const defineRender = (h,params,code) => {
-  let score = Number(params.row[code]) > 100 ? 100 :  params.row[code],
-  currentScore = code == 'matchPercent' ? score + '%': score;
-  return h('Tooltip',{
+const defineRender = (h, params, code) => {
+  let score = Number(params.row[code]) > 100 ? 100 : params.row[code],
+    currentScore = code == 'matchPercent' ? score + '%' : score;
+  return h('Tooltip', {
     props: {
       placement: 'bottom',
       transfer: true,
       theme: 'light'
     }
   },
-  [
-    currentScore,
-    h('Button', {
-       slot: 'content',
-       props: {
-        type: 'primary'
-       },
-       on: {
-        click: ()=> {
-          that.setRadarModal(params.row)
+    [
+      currentScore,
+      h('Button', {
+        slot: 'content',
+        props: {
+          type: 'primary'
+        },
+        on: {
+          click: () => {
+            that.setRadarModal(params.row)
+          }
         }
-       }
       }, "生成雷达图"),
-    h('div', {
-      slot: 'content',
-      style: {
-        maxWidth: '300px',
-        fontSize: '12px',
-        color: '#333',
-        wordBreak: 'break-all',
-        whiteSpace: 'pre-wrap',
-        margin: "10px 0"
-      }
-    },
-     '注：求职者能力值是该用户在河狸学途平台上积累学习行为/项目经验的结果数据，仅供招聘参考；')
-  ])
+      h('div', {
+        slot: 'content',
+        style: {
+          maxWidth: '300px',
+          fontSize: '12px',
+          color: '#333',
+          wordBreak: 'break-all',
+          whiteSpace: 'pre-wrap',
+          margin: "10px 0"
+        }
+      },
+        '注：求职者能力值是该用户在河狸学途平台上积累学习行为/项目经验的结果数据，仅供招聘参考；')
+    ])
 }
+
+let authorityColumns = [
+  {
+    title: '岗位技能分',
+    key: 'skillScore',
+    width: 150,
+    align: 'center',
+    render: (h, params) => {
+      return defineRender(h, params, 'skillScore')
+    }
+  },
+  {
+    title: '匹配度',
+    key: 'matchPercent',
+    width: 150,
+    align: 'center',
+    render: (h, params) => {
+      return defineRender(h, params, 'matchPercent')
+    }
+  },
+  {
+    title: '岗位得分',
+    key: 'postScore',
+    width: 150,
+    align: 'center',
+    render: (h, params) => {
+      return defineRender(h, params, 'postScore')
+    }
+  },
+]
 
 const tableColumns = [ // 表格列
   {
@@ -87,33 +118,7 @@ const tableColumns = [ // 表格列
     width: 150,
     align: 'center'
   },
-  {
-    title: '岗位技能分',
-    key: 'skillScore',
-    width: 150,
-    align: 'center',
-    render: (h,params) => {
-     return defineRender(h,params,'skillScore')
-    }
-  },
-  {
-    title: '匹配度',
-    key: 'matchPercent',
-    width: 150,
-    align: 'center',
-    render: (h,params) => {
-      return defineRender(h,params,'matchPercent')
-    }
-  },
-  {
-    title: '岗位得分',
-    key: 'postScore',
-    width: 150,
-    align: 'center',
-    render: (h,params) => {
-      return defineRender(h,params,'postScore')
-    }
-  },
+  // 根据权限动态插入表头
   {
     title: '来源',
     key: 'deliverChannel',
@@ -146,105 +151,88 @@ const tableColumns = [ // 表格列
   },
 ]
 
-const campusTableColumns =  [ // 表格列
-{
-  type: 'selection',
-  // fixed: 'left',
-  width: 60,
-  align: 'center'
-},
-{
-  title: '应聘学员',
-  key: 'name',
-  width: 150,
-  align: 'center'
-},
-{
-  title: '性别',
-  slot: 'sex',
-  key: 'sex',
-  width: 150,
-  align: 'center'
-},
-{
-  title: '简历',
-  key: 'onlineFlag',
-  slot: 'onlineFlag',
-  width: 150,
-  align: 'center'
-},
-{
-  title: '学历',
-  key: 'degree',
-  slot: 'degree',
-  width: 150,
-  align: 'center'
-},
-{
-  title: '入学年份',
-  key: 'grade',
-  width: 150,
-  align: 'center'
-},
-{
-  title: '首次工作时间',
-  key: 'startWorkTime',
-  slot: 'startWorkTime',
-  width: 150,
-  align: 'center'
-},
-{
-  title: '岗位技能分',
-  key: 'skillScore',
-  width: 150,
-  align: 'center',
-  render: (h,params) => {
-   return defineRender(h,params,'skillScore')
-  }
-},
-{
-  title: '匹配度',
-  key: 'matchPercent',
-  width: 150,
-  align: 'center',
-  render: (h,params) => {
-    return defineRender(h,params,'matchPercent')
-  }
-},
-{
-  title: '岗位得分',
-  key: 'postScore',
-  width: 150,
-  align: 'center',
-  render: (h,params) => {
-    return defineRender(h,params,'postScore')
-  }
-},
-{
-  title: '投递时间',
-  key: 'deliverTime',
-  slot: 'deliverTime',
-  width: 150,
-  align: 'center'
-},
-{
-  title: '招聘阶段',
-  fixed: 'right',
-  key: 'hireStatus',
-  slot: 'hireStatus',
-  width: 150,
-  align: 'center'
-},
-// 操作
-{
-  title: '操作',
-  fixed: 'right',
-  key: 'positiId',
-  slot: 'positiId',
-  width: 300,
-  align: 'center'
-},
+
+const campusTableColumns = [ // 表格列
+  {
+    type: 'selection',
+    // fixed: 'left',
+    width: 60,
+    align: 'center'
+  },
+  {
+    title: '应聘学员',
+    key: 'name',
+    width: 150,
+    align: 'center'
+  },
+  {
+    title: '性别',
+    slot: 'sex',
+    key: 'sex',
+    width: 150,
+    align: 'center'
+  },
+  {
+    title: '简历',
+    key: 'onlineFlag',
+    slot: 'onlineFlag',
+    width: 150,
+    align: 'center'
+  },
+  {
+    title: '学历',
+    key: 'degree',
+    slot: 'degree',
+    width: 150,
+    align: 'center'
+  },
+  {
+    title: '入学年份',
+    key: 'grade',
+    width: 150,
+    align: 'center'
+  },
+  {
+    title: '首次工作时间',
+    key: 'startWorkTime',
+    slot: 'startWorkTime',
+    width: 150,
+    align: 'center'
+  },
+// inside by authority
+  {
+    title: '投递时间',
+    key: 'deliverTime',
+    slot: 'deliverTime',
+    width: 150,
+    align: 'center'
+  },
+  {
+    title: '招聘阶段',
+    fixed: 'right',
+    key: 'hireStatus',
+    slot: 'hireStatus',
+    width: 150,
+    align: 'center'
+  },
+  // 操作
+  {
+    title: '操作',
+    fixed: 'right',
+    key: 'positiId',
+    slot: 'positiId',
+    width: 300,
+    align: 'center'
+  },
 ]
+
+const getAlltableColumns = (flag,isCampus) => {
+  if (flag) {
+    tableColumns.splice(tableColumns.length - 4, 0, ...authorityColumns)
+    campusTableColumns.splice(campusTableColumns.length - 3, 0, ...authorityColumns)
+  }
+  return isCampus ? campusTableColumns : tableColumns
+}
 
 const auditStatusList = [ // 审核状态 (value 后面调)
   {
@@ -380,5 +368,6 @@ export {
   auditStatusList,
   hireStatusList,
   operate,
-  getThis
+  getThis,
+  getAlltableColumns,
 }

@@ -1,20 +1,31 @@
 const { defineConfig } = require('@vue/cli-service')
+// const AutoImport = require('unplugin-auto-import/webpack')
+// const Components = require('unplugin-vue-components/webpack')
+// const { ViewUiResolver } = require('unplugin-vue-components/resolvers')
+
 const path = require('path');
 
-function resolve(dir) {
+function resolve (dir) {
   return path.join(__dirname, dir)
 }
+
 // https://webpack.js.org/configuration/dev-server/#devserver; v5
 
 module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
-  // chainWebpack:(config)=>{
-  //   console.log(config)
-  //   return {
-  //     plugins:{}
-  //   }
-  // },
+  chainWebpack: (config) => {
+    return {
+      plugins: [
+        // AutoImport({
+        //   resolvers: [ViewUiResolver()],
+        // }),
+        // Components({
+        //   resolvers: [ViewUiResolver()],
+        // }),
+      ]
+    }
+  },
   devServer: {
     // port: 8080,
     // open: false,

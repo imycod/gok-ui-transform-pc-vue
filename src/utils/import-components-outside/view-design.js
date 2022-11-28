@@ -1,6 +1,8 @@
 import {
   Table,
   Modal,
+  Button,
+  Drawer,
 } from 'view-design'
 
 const importViewDesign = Vue => {
@@ -15,6 +17,8 @@ const importViewDesign = Vue => {
    */
   Vue.component('Table', Table)
   Vue.component('Modal', Modal)
+  Vue.component('Button', Button)
+  Vue.component('Drawer', Drawer)
 }
 
 export default importViewDesign

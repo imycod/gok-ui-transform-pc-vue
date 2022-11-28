@@ -1,0 +1,43 @@
+.user-center-container{
+  height: 100vh;
+  overflow-y: auto;
+}
+.drawer-con{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  box-shadow: -20px 0 30px 1px rgba(255, 212, 182, 0.13);
+  background: #FFF;
+}
+.drawer-container{
+  @extends .drawer-con;
+  width: 520px;
+}
+.drawer-animation-show{
+  @extends .drawer-con;
+  width: 0;
+  animation: drawerShow 500ms forwards;
+}
+.drawer-animation-hide{
+  @extends .drawer-con;
+  width: 520px;
+  animation: drawerHide 500ms forwards;
+}
+@keyframes drawerShow{
+	0 {
+    width: 0;
+  }
+	100% {
+    width: 520px;
+  }
+}
+@keyframes drawerHide{
+	0 {
+    width: 520px;
+  }
+	100% {
+    width: 0;
+  }
+}

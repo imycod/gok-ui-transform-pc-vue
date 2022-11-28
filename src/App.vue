@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import swiper from '@/view/swiper.vue'
+// import swiper from '@/view/swiper.vue'
 import authentication from "@/view/authentication/index.vue"
 
 export default {
   name: 'App',
   components: {
-    swiper,
+    // swiper,
     authentication,
   }
 }

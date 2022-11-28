@@ -4,6 +4,7 @@ import {
   getThis,
   auditStatusList,
   hireStatusList,
+  getAlltableColumns,
 } from './table-deliver.js'
 
 // 格式化学历的学历枚举和列表
@@ -50,5 +51,6 @@ export {
   formatTime,
   formatDegree,
   getEduReqList,
+  getAlltableColumns,
   pdfName, // not use not now
 }

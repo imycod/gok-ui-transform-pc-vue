@@ -54,7 +54,8 @@ import {
   auditStatusList,
   hireStatusList,
   campusTableColumns,
-  getThis
+  getThis,
+  getAlltableColumns,
 } from './position-detail.js'
 import request, { POSITIONMANAGEMENT_API, ECHARTS_API } from '@/request';
 import Radar from './radar.vue'
@@ -64,13 +65,29 @@ export default {
   components: {
     Radar,
   },
+  props:{
+    // 根据传值渲染不同的表列名
+    campusId:{
+      type:[String,Number],
+      required:false,
+      default:0,
+    },
+    // 根据权限渲染表列
+    personPostMatchFlag:{
+      type:[String,Number],
+      required:true,
+      default:0,
+    }
+  },
   created () {
     getThis(this)
+    this.table.columns=getAlltableColumns(this.personPostMatchFlag,this.campusId)
+    console.log(' this.table.columns---', this.table.columns);
   },
   data () {
     return {
       table: { // 表格数据
-        columns: Object.freeze(false ? campusTableColumns : tableColumns),
+        columns: this.campusId ? campusTableColumns : tableColumns,
         data: [],
         loading: false,
         height: 0

@@ -11,6 +11,7 @@
     "@vue/composition-api": "^1.7.1",
     "axios": "^1.1.2",
     "core-js": "^3.8.3",
+    "crypto-js": "^4.1.1",
     "dayjs": "^1.11.5",
     "echarts": "^5.4.0",
     "lodash": "^4.17.21",
@@ -41,6 +42,8 @@
     "postcss-pxtorem": "^5.1.1",
     "stylus-loader": "^7.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "unplugin-auto-import": "^0.12.0",
+    "unplugin-vue-components": "^0.22.11",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
