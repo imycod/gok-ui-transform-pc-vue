@@ -11,7 +11,6 @@ import UnLoginCard from "./un-login-card.vue";
 import {mapGetters} from "vuex";
 // import mixins from "../../entrance-mixins.js";
 export default {
-  name: 'user-card',
   // mixins:[mixins],
   computed: {
     ...mapGetters(['isLogined'])

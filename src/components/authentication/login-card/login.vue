@@ -59,12 +59,14 @@
 </template>
 
 <script>
+import Storage from "@/utils/storage"
 export default {
   name: 'index',
   methods: {
     login() {
       if (true){
         this.$store.commit('authentication/setLogin',true)
+        Storage.set('isLogin',{ isLogin:true },1000*60*1)
       }
     }
   },

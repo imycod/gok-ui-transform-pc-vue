@@ -28,6 +28,7 @@
 <script>
 import components from "./components/loaderComponent.js";
 import DoingProject from "@/view/training-project/components/doing-project.vue";
+import UserCard from "./components/user-card/index.vue"
 // import DoingProjectWrapper from "./components/doing-project/doing-project-swiper8.vue"
 import DoingProjectCustom from "./components/doing-project/index.vue";
 // import mixins from '../entrance-mixins.js';
@@ -71,6 +72,7 @@ export default {
     DoingProject,
     // DoingProjectSwiper8,
     DoingProjectCustom,
+    UserCard,
   },
 };
 </script>

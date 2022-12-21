@@ -22,5 +22,11 @@ export default [
   {
     name: 'DEMO',
     path: '/demo',
+    children: [
+      {
+        name: 'draggable',
+        path: '/draggable'
+      }
+    ]
   },
 ]

@@ -26,9 +26,12 @@
       </div>
       <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
         <template v-for="(navbar,index) in configNavbar">
-          <li><a class="text-sm text-gray-400 hover:text-gray-500"
+          
+          <li>
+            <a class="text-sm text-gray-400 hover:text-gray-500"
                  :class="active.value === navbar.path && `text-blue-600 font-bold`"
-                 @click.prevent.stop="clickNav(navbar)" :href="navbar.path">{{ navbar.name }}</a></li>
+                 @click.prevent.stop="clickNav(navbar)" :href="navbar.path">{{ navbar.name }}</a>
+          </li>
           <li class="text-gray-300" v-if="index !== configNavbar.length-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill"
                  viewBox="0 0 24 24">
@@ -41,7 +44,7 @@
       <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
          href="#" @click.prevent="signin">Sign In</a>
       <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
-         href="#" @click.prevent="signup">Sign up</a -->
+         href="#" @click.prevent="signup">Sign up</a>
     </nav>
     <div class="navbar-menu relative z-50 hidden">
       <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
@@ -87,22 +90,21 @@
 </template>
 
 <script>
-import configNavbar from '@/config/navbar.js'
-import { defineComponent, onMounted, ref, watch } from '@vue/composition-api';
-import router from '@/router/index.js'
-import store from "@/store/index.js"
+import configNavbar from "@/config/navbar.js";
+import { defineComponent, onMounted, ref, watch } from "@vue/composition-api";
+import router from "@/router/index.js";
+import store from "@/store/index.js";
 
 export default defineComponent({
-  name: 'navbar',
-  setup (props, ctx) {
-
-    const active = ref('')
-    console.log(router.currentRoute)
+  name: "navbar",
+  setup(props, ctx) {
+    const active = ref("");
+    console.log(router.currentRoute);
     onMounted(() => {
-      domLoaded()
-    })
+      domLoaded();
+    });
 
-    const $route = router.currentRoute
+    const $route = router.currentRoute;
     // watch([$route.path], ([newValue, oldValue]) => {
     //   console.log(newValue)
     // }, {
@@ -110,36 +112,36 @@ export default defineComponent({
     //   deep: true
     // })
 
-    function clickNav (navbar) {
-      active.value = navbar.path
-      router.push(active.value)
+    function clickNav(navbar) {
+      active.value = navbar.path;
+      router.push(active.value);
     }
 
-    function domLoaded () {
+    function domLoaded() {
       // Burger menus
       // open
-      const burger = document.querySelectorAll('.navbar-burger');
-      const menu = document.querySelectorAll('.navbar-menu');
+      const burger = document.querySelectorAll(".navbar-burger");
+      const menu = document.querySelectorAll(".navbar-menu");
 
       if (burger.length && menu.length) {
         for (var i = 0; i < burger.length; i++) {
-          burger[i].addEventListener('click', function () {
+          burger[i].addEventListener("click", function () {
             for (var j = 0; j < menu.length; j++) {
-              menu[j].classList.toggle('hidden');
+              menu[j].classList.toggle("hidden");
             }
           });
         }
       }
 
       // close
-      const close = document.querySelectorAll('.navbar-close');
-      const backdrop = document.querySelectorAll('.navbar-backdrop');
+      const close = document.querySelectorAll(".navbar-close");
+      const backdrop = document.querySelectorAll(".navbar-backdrop");
 
       if (close.length) {
         for (var i = 0; i < close.length; i++) {
-          close[i].addEventListener('click', function () {
+          close[i].addEventListener("click", function () {
             for (var j = 0; j < menu.length; j++) {
-              menu[j].classList.toggle('hidden');
+              menu[j].classList.toggle("hidden");
             }
           });
         }
@@ -147,22 +149,19 @@ export default defineComponent({
 
       if (backdrop.length) {
         for (var i = 0; i < backdrop.length; i++) {
-          backdrop[i].addEventListener('click', function () {
+          backdrop[i].addEventListener("click", function () {
             for (var j = 0; j < menu.length; j++) {
-              menu[j].classList.toggle('hidden');
+              menu[j].classList.toggle("hidden");
             }
           });
         }
       }
     }
 
+    function signup() {}
 
-    function signup () {
-
-    }
-
-    function signin () {
-      store.commit('authentication/setShowLogin', true)
+    function signin() {
+      store.commit("authentication/setShowLogin", true);
     }
 
     return {
@@ -170,10 +169,10 @@ export default defineComponent({
       clickNav,
       active,
       signin,
-      signup
-    }
+      signup,
+    };
   },
-})
+});
 </script>
 
 <style lang="stylus" scoped>

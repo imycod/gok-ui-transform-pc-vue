@@ -1,65 +1,55 @@
 <template>
   <div>
     <button
-        @click="switchover('#000')"
-        type="button"
-        class="btn btn-styles focus:ring-2  focus:ring-green-200">
+      @click="switchover('#000')"
+      type="button"
+      class="btn btn-styles focus:ring-2 focus:ring-green-200"
+    >
       一件切换主题色
     </button>
+    <br />
+    <button class="btn" @click="openDrawer">打开抽屉弹层</button>
+
+    <drawer />
   </div>
 </template>
 
 <script>
-import Stack1 from '@/components/effect/card/stack1.vue'
-import TButton from '@/components/effect/color/tailwind-button.vue'
-import { defineComponent } from '@vue/composition-api';
+// import Stack1 from "@/components/effect/card/stack1.vue";
+// import TButton from "@/components/effect/color/tailwind-button.vue";
+
+import { defineComponent } from "@vue/composition-api";
+
+import { drawer, useDrawer } from "./drawer/index.js";
 
 export default defineComponent({
-  name: 'demo',
+  name: "demo",
   components: {
-    Stack1,
-    TButton,
+    // Stack1,
+    // TButton,
+    drawer,
   },
-  setup () {
-    function switchover (value) {
+  setup() {
+    function switchover(value) {
       // document.documentElement
-      const themeColor = document.documentElement.style.getPropertyValue('--main-theme-color')
-      if (themeColor === '#000') {
-        value = '#fff'
+      const themeColor =
+        document.documentElement.style.getPropertyValue("--main-theme-color");
+      if (themeColor === "#000") {
+        value = "#fff";
       } else {
-        value = '#000'
+        value = "#000";
       }
-      document.documentElement.style.setProperty('--main-theme-color', value)
+      document.documentElement.style.setProperty("--main-theme-color", value);
     }
-
+    const { openDrawer } = useDrawer();
     return {
-      switchover
-    }
-  }
+      openDrawer,
+      switchover,
+    };
+  },
 });
 </script>
 
 <style lang="stylus" scoped>
-@css {
-  .btn{
-    @apply
-      bg-gray-200
-      text-black
-      font-medium
-      rounded-lg
-      text-sm
-      px-5
-      py-2.5
-      text-center
-      mr-2
-      mb-2
-  }
-  .btn-styles {
-    @apply
-      bg-gradient-to-bl
-      from-green-400
-      to-blue-600
-      text-white
-  }
-}
+@import "./index.styl";
 </style>

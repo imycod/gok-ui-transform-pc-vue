@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { bus } from './event-bus.js'
+import  bus  from '@/plugins/bus.js'
 import router from './router/index.js'
 import store from './store'
 import VueCompositionAPI from '@vue/composition-api'
@@ -8,10 +8,10 @@ import VueCompositionAPI from '@vue/composition-api'
 import 'view-design/dist/styles/iview.css'
 
 import importDirective from '@/directives/index.js';
-import importViewDesign from "@/utils/import-components-outside/view-design.js"
+import importViewDesign from "@/plugins/view-design.js"
 
 import * as filters from '@/utils/filters/index.js'; // 全局过滤器
-import echarts from "@/utils/echarts.js" // 按需加载echarts
+import echarts from "@/plugins/echarts.js" // 按需加载echarts
 // import * as echarts from "echarts" // 加载全部
 import dayjs from "dayjs"
 
