@@ -1,11 +1,3 @@
-/*
- * @Author: shiyh shiyh@goktech.cn
- * @Date: 2022-06-15 14:17:20
- * @LastEditors: shiyh shiyh@goktech.cn
- * @LastEditTime: 2022-06-16 01:29:48
- * @FilePath: /college-teaching/src/components/order-pay/order.js
- * @Description: 订单支付的公共方法
- */
 import TAC from '_api/TAC.API'
 import $one from '@/one-builder'
 import $router from '@/router'

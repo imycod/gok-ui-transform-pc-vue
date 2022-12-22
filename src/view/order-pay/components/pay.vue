@@ -1,11 +1,3 @@
-<!--
- * @Author: shiyh shiyh@goktech.cn
- * @Date: 2022-06-10 09:44:07
- * @LastEditors: shiyh shiyh@goktech.cn
- * @LastEditTime: 2022-06-16 17:31:58
- * @FilePath: /college-teaching/src/components/order-pay/pay.vue
- * @Description: 扫码支付
--->
 <template>
   <div class="pay-step">
     <p class="title"><span>应付金额</span><span v-cny="orderInfo.orderPrice"></span></p>

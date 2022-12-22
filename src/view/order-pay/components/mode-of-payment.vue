@@ -1,11 +1,3 @@
-<!--
- * @Author: shiyh shiyh@goktech.cn
- * @Date: 2022-06-10 09:43:54
- * @LastEditors: shiyh shiyh@goktech.cn
- * @LastEditTime: 2022-06-16 17:01:24
- * @FilePath: /college-teaching/src/components/order-pay/mode-of-payment.vue
- * @Description: 选择支付方式
--->
 <template>
   <div class="mode-payment">
     <p class="info-row limit-row">请在 <span class="limit-time">{{limitTimeStr}}</span> 内完成支付，逾期订单将取消</p>

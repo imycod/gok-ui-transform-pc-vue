@@ -1,11 +1,3 @@
-<!--
- * @Author: shiyh shiyh@goktech.cn
- * @Date: 2022-06-10 09:44:20
- * @LastEditors: shiyh shiyh@goktech.cn
- * @LastEditTime: 2022-06-15 14:16:24
- * @FilePath: /college-teaching/src/components/order-pay/complete.vue
- * @Description: 支付完成
--->
 <template>
   <div class="pay-complete">
     <img :src="`${$CONFIG.STATIC_RESOURCE_URL}edu/icon/icon-order-success.png`" alt="支付成功">

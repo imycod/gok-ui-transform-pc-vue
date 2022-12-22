@@ -1,11 +1,3 @@
-<!--
- * @Author: shiyh shiyh@goktech.cn
- * @Date: 2022-06-13 14:40:53
- * @LastEditors: shiyh shiyh@goktech.cn
- * @LastEditTime: 2022-06-15 14:13:49
- * @FilePath: /college-teaching/src/components/order-pay/pay-qr/zfb-qr.vue
- * @Description: 支付宝二维码
--->
 <template>
   <iframe :srcdoc="$attrs.qrContent"
           frameborder='no'

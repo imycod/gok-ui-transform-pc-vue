@@ -1,11 +1,3 @@
-<!--
- * @Author: shiyh shiyh@goktech.cn
- * @Date: 2022-06-08 14:26:15
- * @LastEditors: shiyh shiyh@goktech.cn
- * @LastEditTime: 2022-06-27 18:53:43
- * @FilePath: /college-teaching/src/view/growth-path-details/order-pay/index.vue
- * @Description: 订单详情
--->
 <template>
   <div>
     <order-pay :orderId="orderId"></order-pay>

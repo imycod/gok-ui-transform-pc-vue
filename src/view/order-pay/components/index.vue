@@ -1,11 +1,3 @@
-<!--
- * @Author: shiyh shiyh@goktech.cn
- * @Date: 2022-06-10 09:42:37
- * @LastEditors: shiyh shiyh@goktech.cn
- * @LastEditTime: 2022-06-16 17:14:19
- * @FilePath: /college-teaching/src/components/order-pay/index.vue
- * @Description: 订单支付
--->
 <template>
   <div class="pay-container">
     <pay-step :steps="steps" :current="currentStep"></pay-step>
