@@ -1,0 +1,96 @@
+$defaultBgColor = #F7F8FA;
+$activeBgColor = #FF7D33;
+$completeBgColor = #E8F3FF;
+.triangle-right{
+  width: 0;
+  height: 0;
+  border-top: 36px solid transparent;
+  border-bottom: 36px solid transparent;
+}
+.common{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.step-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 298px;
+  height: 72px;
+  padding: 13px 16px;
+  margin-right: 5px;
+  text-align: left;
+  background-color: $defaultBgColor;
+  font-weight: 400;
+  & > p:first-child{
+    font-size: 16px;
+  }
+  & > p:last-child{
+    font-size: 12px;
+  }
+}
+.first-step{
+  &::after{
+    @extends .common;
+    right: -36px;
+    z-index: 99;
+    @extends .triangle-right
+    border-left: 36px solid $defaultBgColor;
+  }
+}
+.process-step{
+  padding-left: 52px;
+  &::before{
+    @extends .common;
+    left: 0;
+    // z-index: 0;
+    @extends .triangle-right
+    border-left: 36px solid #FFF;
+  }
+  &::after{
+    @extends .common;
+    right: -36px;
+    z-index: 9;
+    @extends .triangle-right
+    border-left: 36px solid $defaultBgColor;
+  }
+}
+.last-step{
+  padding-left: 52px;
+  margin-right: 0;
+  &::before{
+    @extends .common;
+    left: 0;
+    @extends .triangle-right
+    border-left: 36px solid #FFF;
+  }
+}
+.active-item{
+  background: $activeBgColor;
+  color: #FFF;
+  z-index: 9;
+  &::before{
+    border-left: 36px solid #FFF;
+  }
+  &::after{
+    border-left: 36px solid $activeBgColor;
+  }
+}
+.complete-item{
+  background: $completeBgColor;
+  color: #333;
+  // z-index: 10;
+  & > p:last-child{
+    color: #8590A6;
+  }
+  &::before{
+    border-left: 36px solid #fff;
+  }
+  &::after{
+    z-index: 10;
+    border-left: 36px solid $completeBgColor;
+  }
+}
