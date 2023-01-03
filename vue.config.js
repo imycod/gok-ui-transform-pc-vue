@@ -12,6 +12,7 @@ function resolve (dir) {
 // https://webpack.js.org/configuration/dev-server/#devserver; v5
 
 module.exports = defineConfig({
+  publicPath:'./',
   transpileDependencies: true,
   lintOnSave: false,
   chainWebpack: (config) => {
