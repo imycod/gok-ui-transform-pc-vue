@@ -1,7 +1,7 @@
 export default [
   {
     path: '/dashboard',
-    // name: 'dashboard', // 重定向就不用在白名单里配这个了
+    name: 'dashboard', // 重定向就不用在白名单里配这个了
     meta: {
       title: '面板',
     },

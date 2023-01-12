@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Router from "vue-router"
 import App from './App.vue'
 import  bus  from '@/plugins/bus.js'
 import router from './router/index.js'

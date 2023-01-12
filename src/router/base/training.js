@@ -5,17 +5,16 @@ export default [
     name: 'training',
     meta: {
       title: '实训首页',
-      ignoreCheck: ['token']
     },
     component: (resolve) => require(['@/view/training-project/home/index.vue'], resolve),
     children: [
       {
         path: '/training',
         name: 'training',
-        meta: {
-          title: '项目实训',
-          ignoreCheck: ['token']
-        },
+        // meta: {
+        //   title: '项目实训',
+        //   ignoreCheck: ['token']
+        // },
         component: (resolve) => require(['@/view/training-project/home/training/index.vue'], resolve)
       },
       // {

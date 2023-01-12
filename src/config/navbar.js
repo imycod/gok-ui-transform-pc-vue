@@ -21,7 +21,7 @@ export default [
   },
   {
     name: 'DEMO',
-    path: '/demo',
+    path: '/not-login/demo',
     children: [
       {
         name: 'draggable',
