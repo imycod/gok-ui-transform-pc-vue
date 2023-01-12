@@ -5,17 +5,17 @@
         <button class="btn sticky" @click="closeDrawer">关闭抽屉弹层</button>
         <div class="container bd">
           <div class="font border-2 height-100">
-            1 
+            1
           </div>
           <div class="font border-2 height-200">
-            2 
+            2
           </div>
           <div class="font border-2 height-300">
-            3 
+            3
           </div>
           <div class="font border-2 height-500">
             <ul>
-              <li class="h-50 border-2" v-for="i in count.value">{{ i }} <span class="pointer" @click="addCount">+</span></li> 
+              <li class="h-50 border-2" v-for="i in count.value">{{ i }} <span class="pointer" @click="addCount">+</span></li>
             </ul>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default defineComponent({
 </script>
 
 <style lang="stylus" scoped>
-@import '../index.styl';
+@import '../../index.styl';
 
 .body {
   .container {

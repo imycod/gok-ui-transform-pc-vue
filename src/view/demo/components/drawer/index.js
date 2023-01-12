@@ -22,9 +22,9 @@ function useDrawer() {
     }
 }
 
-import drawer from "./index.vue"
+import Drawer from "./index.vue"
 export {
-    drawer,
+    Drawer,
     useDrawer,
-}  
+}
 

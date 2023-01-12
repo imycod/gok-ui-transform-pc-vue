@@ -10,7 +10,9 @@
     <br />
     <button class="btn" @click="openDrawer">打开抽屉弹层</button>
 
-    <drawer />
+    <Drawer />
+
+    <TextEllipsis3 :introduce="introduce.value"></TextEllipsis3>
   </div>
 </template>
 
@@ -20,14 +22,16 @@
 
 import { defineComponent } from "@vue/composition-api";
 
-import { drawer, useDrawer } from "./drawer/index.js";
+import { Drawer, useDrawer } from "./components/drawer/index.js";
+import { TextEllipsis1,TextEllipsis2,TextEllipsis3, useTextEllipsis } from '@/components/text-ellipsis/index.js';
 
 export default defineComponent({
   name: "demo",
   components: {
     // Stack1,
     // TButton,
-    drawer,
+    Drawer,
+    TextEllipsis3,
   },
   setup() {
     function switchover(value) {
@@ -42,9 +46,11 @@ export default defineComponent({
       document.documentElement.style.setProperty("--main-theme-color", value);
     }
     const { openDrawer } = useDrawer();
+    const { introduce } = useTextEllipsis()
     return {
       openDrawer,
       switchover,
+      introduce,
     };
   },
 });
