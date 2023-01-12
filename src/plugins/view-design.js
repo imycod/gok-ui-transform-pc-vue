@@ -3,6 +3,8 @@ import {
   Modal,
   Button,
   Drawer,
+  Tabs,
+  TabPane,
 } from 'view-design'
 
 const importViewDesign = Vue => {
@@ -19,6 +21,8 @@ const importViewDesign = Vue => {
   Vue.component('Modal', Modal)
   Vue.component('Button', Button)
   Vue.component('Drawer', Drawer)
+  Vue.component('TabPane', TabPane)
+  Vue.component('Tabs', Tabs)
 }
 
 export default importViewDesign

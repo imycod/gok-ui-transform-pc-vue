@@ -13,6 +13,9 @@ export default {
     {
       path: '/not-login/demo1',
       name:'demo1',
+      meta:{
+        title:'vue2 vs vue3'
+      },
       component: () => import('@/view/demo1/index.vue'),
     },
     {

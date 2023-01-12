@@ -15,7 +15,7 @@
           </div>
           <div class="font border-2 height-500">
             <ul>
-              <li class="h-50 border-2" v-for="i in count.value">{{ i }} <span class="pointer" @click="addCount">+</span></li>
+              去11
             </ul>
           </div>
         </div>
@@ -28,19 +28,8 @@
 import { defineComponent, onMounted, ref } from "@vue/composition-api";
 
 import DrawerContainerRoute from "@/components/drawer/drawer-container.vue";
-import { useDrawer } from "./index.js";
-import {useScale} from "@/utils/screen/index.js"
+import { handleDrawer as useDrawer  } from "./index.js";
 
-function useCounter() {
-  const count = ref(1);
-  const addCount = () => {
-    count.value += 1;
-  };
-  return {
-    count,
-    addCount,
-  };
-}
 
 export default defineComponent({
   components: {
@@ -48,22 +37,16 @@ export default defineComponent({
   },
   setup() {
     const { closeDrawer } = useDrawer();
-    onMounted(() => {
-        const container = document.querySelector(".container");
-        // useScale(container,1920)
-    });
-    const { count, addCount } = useCounter();
+
     return {
       closeDrawer,
-      count,
-      addCount,
     };
   },
 });
 </script>
 
 <style lang="stylus" scoped>
-@import '../../index.styl';
+@import './index.styl';
 
 .body {
   .container {
